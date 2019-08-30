@@ -6,6 +6,7 @@ import co.ke.tickett.data.network.MyApi
 import co.ke.tickett.data.network.NetworkConnectionInterceptor
 import co.ke.tickett.data.repository.UserRepository
 import co.ke.tickett.ui.AuthViewModelFactory
+import co.ke.tickett.ui.home.HomeViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.androidXModule
@@ -24,6 +25,7 @@ class MVVMApplication : Application(), KodeinAware {
         bind() from singleton { AppDatabase(instance()) }
         bind() from singleton { UserRepository(instance(), instance()) }
         bind() from provider { AuthViewModelFactory(instance()) }
+        bind() from provider { HomeViewModelFactory(instance()) }
 
 
     }

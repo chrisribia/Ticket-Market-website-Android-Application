@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import co.ke.tickett.R
 import co.ke.tickett.data.db.entity.User
 import co.ke.tickett.databinding.ActivityLoginBinding
+import co.ke.tickett.ui.home.HomeActivity
 import co.ke.tickett.utils.toast
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
@@ -38,8 +39,6 @@ class LoginActivity : AppCompatActivity(), AuthListener,KodeinAware{
                 }
             }
         })
-
-
     }
 
 

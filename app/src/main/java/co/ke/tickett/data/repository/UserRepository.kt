@@ -6,7 +6,6 @@ import co.ke.tickett.data.network.MyApi
 import co.ke.tickett.data.network.Response.AuthResponse
 import co.ke.tickett.data.network.SafeApiRequest
 
-
 class UserRepository(
     private val api: MyApi,
     private val db: AppDatabase
@@ -20,5 +19,7 @@ class UserRepository(
     suspend fun saveUser(user: User) = db.getUserDao().upsert(user)
 
     fun getUser() = db.getUserDao().getuser()
+
+    fun logout() = db.getUserDao().deleteUser()
 
 }
