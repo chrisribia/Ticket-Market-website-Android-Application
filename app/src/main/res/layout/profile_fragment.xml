@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="50dp"
+        android:orientation="vertical"
         tools:context=".ui.profileFragment.ProfileFragment">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello"/>
 
-</FrameLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/theo"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+    <TextView android:layout_width="match_parent"
+              android:text="Email"
+              android:layout_marginTop="30dp"
+              android:gravity="center"
+              android:layout_height="wrap_content"/>
+    <TextView android:layout_width="match_parent"
+              android:gravity="center"
+              android:layout_marginTop="30dp"
+              android:text="Name"
+              android:layout_height="wrap_content"/>
+
+</LinearLayout>
