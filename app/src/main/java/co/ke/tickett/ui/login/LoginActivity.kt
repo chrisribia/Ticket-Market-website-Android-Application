@@ -1,4 +1,4 @@
-package co.ke.tickett.ui
+package co.ke.tickett.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

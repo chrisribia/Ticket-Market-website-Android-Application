@@ -1,4 +1,4 @@
-package co.ke.tickett.ui
+package co.ke.tickett.ui.login
 
 import co.ke.tickett.data.db.entity.User
 

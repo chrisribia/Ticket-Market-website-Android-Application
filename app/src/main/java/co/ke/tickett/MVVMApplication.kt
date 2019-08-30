@@ -5,7 +5,7 @@ import co.ke.tickett.data.db.AppDatabase
 import co.ke.tickett.data.network.MyApi
 import co.ke.tickett.data.network.NetworkConnectionInterceptor
 import co.ke.tickett.data.repository.UserRepository
-import co.ke.tickett.ui.AuthViewModelFactory
+import co.ke.tickett.ui.login.AuthViewModelFactory
 import co.ke.tickett.ui.home.HomeViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware

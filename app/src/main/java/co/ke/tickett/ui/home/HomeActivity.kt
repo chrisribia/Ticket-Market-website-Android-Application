@@ -7,8 +7,12 @@ import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import co.ke.tickett.R
-import co.ke.tickett.ui.LoginActivity
+import co.ke.tickett.ui.login.LoginActivity
 import co.ke.tickett.utils.Coroutines
 import kotlinx.android.synthetic.main.activity_home.*
 import org.kodein.di.KodeinAware
@@ -21,7 +25,7 @@ class HomeActivity : AppCompatActivity(), KodeinAware {
 
 
 
-
+    private lateinit var navController: NavController
     private lateinit var viewModel: HomeViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +33,24 @@ class HomeActivity : AppCompatActivity(), KodeinAware {
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
-
         viewModel = ViewModelProviders.of(this, factory).get(HomeViewModel::class.java)
+
+
+        //Getting the Navigation Controller
+        navController = Navigation.findNavController(this, R.id.fragment)
+
+        //Setting the navigation controller to Bottom Nav
+        bottomNav.setupWithNavController(navController)
+
+
+        //Setting up the action bar
+        NavigationUI.setupActionBarWithNavController(this, navController)
+
+    }
+
+    //Setting Up the back button
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, null)
     }
 
 

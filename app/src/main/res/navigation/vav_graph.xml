@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/vav_graph"
+            app:startDestination="@id/scannFragment">
+
+    <fragment android:id="@+id/homeFragment" android:name="co.ke.tickett.ui.HomeFragment.HomeFragment"
+              android:label="home_fragment" tools:layout="@layout/home_fragment"/>
+    <fragment android:id="@+id/profileFragment" android:name="co.ke.tickett.ui.profileFragment.ProfileFragment"
+              android:label="profile_fragment" tools:layout="@layout/profile_fragment"/>
+    <fragment android:id="@+id/scannFragment" android:name="co.ke.tickett.ui.ScannFragment.ScannFragment"
+              android:label="scann_fragment" tools:layout="@layout/scann_fragment"/>
+</navigation>

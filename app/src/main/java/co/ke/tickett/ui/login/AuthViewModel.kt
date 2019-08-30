@@ -1,4 +1,4 @@
-package co.ke.tickett.ui
+package co.ke.tickett.ui.login
 
 import android.view.View
 import androidx.lifecycle.ViewModel
