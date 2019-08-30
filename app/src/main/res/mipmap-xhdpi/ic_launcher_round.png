@@ -1,0 +1,186 @@
+package co.ke.ss.databinding;
+import co.ke.ss.Auth.auth.AuthViewModel;
+import co.ke.ss.BR;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.view.View;
+@SuppressWarnings("unchecked")
+public class ActivityMainBindingImpl extends ActivityMainBinding  {
+
+    @Nullable
+    private static final androidx.databinding.ViewDataBinding.IncludedLayouts sIncludes;
+    @Nullable
+    private static final android.util.SparseIntArray sViewsWithIds;
+    static {
+        sIncludes = null;
+        sViewsWithIds = null;
+    }
+    // views
+    @NonNull
+    private final android.widget.LinearLayout mboundView0;
+    @NonNull
+    private final android.widget.EditText mboundView1;
+    @NonNull
+    private final android.widget.EditText mboundView2;
+    @NonNull
+    private final android.widget.Button mboundView3;
+    // variables
+    // values
+    // listeners
+    private OnClickListenerImpl mViewmodelOnLoginAndroidViewViewOnClickListener;
+    // Inverse Binding Event Handlers
+    private androidx.databinding.InverseBindingListener mboundView1androidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
+        @Override
+        public void onChange() {
+            // Inverse of viewmodel.email
+            //         is viewmodel.setEmail((java.lang.String) callbackArg_0)
+            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(mboundView1);
+            // localize variables for thread safety
+            // viewmodel != null
+            boolean viewmodelJavaLangObjectNull = false;
+            // viewmodel.email
+            java.lang.String viewmodelEmail = null;
+            // viewmodel
+            AuthViewModel viewmodel = mViewmodel;
+
+
+
+            viewmodelJavaLangObjectNull = (viewmodel) != (null);
+            if (viewmodelJavaLangObjectNull) {
+
+
+
+
+                viewmodel.setEmail(((java.lang.String) (callbackArg_0)));
+            }
+        }
+    };
+    private androidx.databinding.InverseBindingListener mboundView2androidTextAttrChanged = new androidx.databinding.InverseBindingListener() {
+        @Override
+        public void onChange() {
+            // Inverse of viewmodel.passcode
+            //         is viewmodel.setPasscode((java.lang.String) callbackArg_0)
+            java.lang.String callbackArg_0 = androidx.databinding.adapters.TextViewBindingAdapter.getTextString(mboundView2);
+            // localize variables for thread safety
+            // viewmodel.passcode
+            java.lang.String viewmodelPasscode = null;
+            // viewmodel != null
+            boolean viewmodelJavaLangObjectNull = false;
+            // viewmodel
+            AuthViewModel viewmodel = mViewmodel;
+
+
+
+            viewmodelJavaLangObjectNull = (viewmodel) != (null);
+            if (viewmodelJavaLangObjectNull) {
+
+
+
+
+                viewmodel.setPasscode(((java.lang.String) (callbackArg_0)));
+            }
+        }
+    };
+
+    public ActivityMainBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+    }
+    private ActivityMainBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
+        super(bindingComponent, root, 0
+            );
+        this.mboundView0 = (android.widget.LinearLayout) bindings[0];
+        this.mboundView0.setTag(null);
+        this.mboundView1 = (android.widget.EditText) bindings[1];
+        this.mboundView1.setTag(null);
+        this.mboundView2 = (android.widget.EditText) bindings[2];
+        this.mboundView2.setTag(null);
+        this.mboundView3 = (android.widget.Button) bindings[3];
+        this.mboundView3.setTag(null);
+        setRootTag(root);
+        // listeners
+        invalidateAll();
+    }
+
+    @Override
+    public void invalidateAll() {
+        synchronized(this) {
+                mDirtyFlags = 0x2L;
+        }
+        requestRebind();
+    }
+
+    @Override
+    public boolean hasPendingBindings() {
+        synchronized(this) {
+            if (mDirtyFlags != 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean setVariable(int variableId, @Nullable Object variable)  {
+        boolean variableSet = true;
+        if (BR.viewmodel == variableId) {
+            setViewmodel((AuthViewModel) variable);
+        }
+        else {
+            variableSet = false;
+        }
+            return variableSet;
+    }
+
+    public void setViewmodel(@Nullable AuthViewModel Viewmodel) {
+        this.mViewmodel = Viewmodel;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.viewmodel);
+        super.requestRebind();
+    }
+
+    @Override
+    protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
+        switch (localFieldId) {
+        }
+        return false;
+    }
+
+    @Override
+    protected void executeBindings() {
+        long dirtyFlags = 0;
+        synchronized(this) {
+            dirtyFlags = mDirtyFlags;
+            mDirtyFlags = 0;
+        }
+        java.lang.String viewmodelPasscode = null;
+        android.view.View.OnClickListener viewmodelOnLoginAndroidViewViewOnClickListener = null;
+        java.lang.String viewmodelEmail = null;
+        AuthViewModel viewmodel = mViewmodel;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (viewmodel != null) {
+                    // read viewmodel.passcode
+                    viewmodelPasscode = viewmodel.getPasscode();
+                    // read viewmodel::onLogin
+                    viewmodelOnLoginAndroidViewViewOnClickListener = (((mViewmodelOnLoginAndroidViewViewOnClickListener == null) ? (mViewmodelOnLoginAndroidViewViewOnClickListener = new OnClickListenerImpl()) : mViewmodelOnLoginAndroidViewViewOnClickListener).setValue(viewmodel));
+                    // read viewmodel.email
+                    viewmodelEmail = viewmodel.getEmail();
+                }
+        }
+        // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView1, viewmodelEmail);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, viewmodelPasscode);
+            this.mboundView3.setOnClickListener(viewmodelOnLoginAndroidViewViewOnClickListener);
+        }
+        if ((dirtyFlags & 0x2L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.mboundView1, (androidx.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (androidx.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, mboun
