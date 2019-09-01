@@ -8,12 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 
 import co.ke.tickett.R
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.x.kodein
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), KodeinAware {
+    override val kodein by kodein()
 
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
+
 
     private lateinit var viewModel: HomeViewModel
 
@@ -24,10 +25,5 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.home_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }
