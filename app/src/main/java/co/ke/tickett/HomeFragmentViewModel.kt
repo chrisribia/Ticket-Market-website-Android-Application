@@ -1,9 +1,9 @@
-package co.ke.tickett.ui.HomeFragment
+package co.ke.tickett
 
 import androidx.lifecycle.ViewModel;
 import co.ke.tickett.data.repository.TicketRepository
 
-class HomeViewModel(
+class HomeFragmentViewModel(
     private val repository: TicketRepository
 ) : ViewModel() {
     // TODO: Implement the ViewModel
