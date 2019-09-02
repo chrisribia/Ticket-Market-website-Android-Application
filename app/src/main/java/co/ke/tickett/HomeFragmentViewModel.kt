@@ -6,5 +6,5 @@ import co.ke.tickett.data.repository.TicketRepository
 class HomeFragmentViewModel(
     private val repository: TicketRepository
 ) : ViewModel() {
-    // TODO: Implement the ViewModel
+var name = "chris topher"
 }

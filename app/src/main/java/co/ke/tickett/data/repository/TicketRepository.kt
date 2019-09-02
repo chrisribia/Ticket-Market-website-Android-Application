@@ -7,4 +7,6 @@ import co.ke.tickett.data.network.SafeApiRequest
 class TicketRepository(private val api: MyApi,
                        private val db: AppDatabase
 ): SafeApiRequest() {
+
+
 }
