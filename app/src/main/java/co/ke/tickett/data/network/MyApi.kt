@@ -1,6 +1,8 @@
 package co.ke.tickett.data.network
 
+import co.ke.tickett.data.db.entity.Tickets
 import co.ke.tickett.data.network.Response.AuthResponse
+import co.ke.tickett.data.network.Response.TicketsResponse
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -21,6 +23,9 @@ interface MyApi {
         @Field("passcode")
         password: String
     ) : Response<AuthResponse>
+
+    @GET("qr_codes.php")
+    suspend fun getTickets() : Response<TicketsResponse>
 
 
     companion object{

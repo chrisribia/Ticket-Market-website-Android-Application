@@ -1,6 +1,7 @@
 package co.ke.tickett
 
 import android.app.Application
+import co.ke.tickett.data.PreferenceProvider
 import co.ke.tickett.data.db.AppDatabase
 import co.ke.tickett.data.network.MyApi
 import co.ke.tickett.data.network.NetworkConnectionInterceptor
@@ -26,8 +27,9 @@ class MVVMApplication : Application(), KodeinAware {
         bind() from singleton { NetworkConnectionInterceptor(instance()) }
         bind() from singleton { MyApi(instance()) }
         bind() from singleton { AppDatabase(instance()) }
+        bind() from singleton { PreferenceProvider(instance()) }
         bind() from singleton { UserRepository(instance(), instance()) }
-        bind() from singleton { TicketRepository(instance(), instance()) }
+        bind() from singleton { TicketRepository(instance(), instance(),instance()) }
         bind() from provider { AuthViewModelFactory(instance()) }
         bind() from provider { HomeViewModelFactory(instance()) }
         bind() from provider { ProfileViewModelFactory(instance()) }

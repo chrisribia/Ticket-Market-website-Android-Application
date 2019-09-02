@@ -14,5 +14,5 @@ interface TicketDao {
     fun saveAllTickets(tickets : List<Tickets>)
 
     @Query("SELECT * FROM Tickets WHERE qr_code =:qr_code")
-    fun getTicket(qr_code : String) : LiveData<List<Tickets>>
+    fun getTicket(qr_code : String) : LiveData<Tickets>
 }

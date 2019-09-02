@@ -1,5 +1,6 @@
 package co.ke.tickett.ui.HomeFragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import co.ke.tickett.HomeFragmentViewModel
 
 import co.ke.tickett.R
 import co.ke.tickett.databinding.HomeFragmentBinding
+import co.ke.tickett.utils.toast
+import com.google.zxing.integration.android.IntentIntegrator
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
@@ -35,8 +38,32 @@ class HomeFragment : Fragment(), KodeinAware {
         viewModel = ViewModelProviders.of(this, factory).get(HomeFragmentViewModel::class.java)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
+        scanFromFragment()
         return binding.root
     }
 
+
+    fun scanFromFragment() {
+        IntentIntegrator.forSupportFragment(this).initiateScan()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+
+        if(result != null) {
+            if(result.getContents() == null) {
+                context?.toast("Cancelled from fragment")
+            } else {
+//                context?.toast(result.getContents())
+//                scann_results.setText(result.getContents())
+
+                viewModel.findEmployee(result.getContents())
+            }
+
+            // At this point we may or may not have a reference to the activity
+            // displayToast();
+        }
+
+    }
 
 }
