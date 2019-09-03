@@ -26,7 +26,7 @@ class HomeFragmentViewModel(
         Coroutines.io{
             repository.fetchTickets()
         }
-        val ticket = repository.findTicket(n)
+        val ticket = repository.findTicket(qr)
         ticket.observeForever {
             _currentTicket.postValue(it)
         }
