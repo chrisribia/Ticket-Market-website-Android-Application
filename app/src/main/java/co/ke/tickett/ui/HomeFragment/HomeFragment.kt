@@ -53,15 +53,12 @@ class HomeFragment : Fragment(), KodeinAware {
         if(result != null) {
             if(result.getContents() == null) {
                 context?.toast("Cancelled from fragment")
-            } else {
-//                context?.toast(result.getContents())
-//                scann_results.setText(result.getContents())
+            } else { 
 
                 viewModel.findEmployee(result.getContents())
             }
 
-            // At this point we may or may not have a reference to the activity
-            // displayToast();
+            
         }
 
     }
