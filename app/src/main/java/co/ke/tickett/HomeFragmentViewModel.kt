@@ -11,9 +11,7 @@ class HomeFragmentViewModel(
     private val repository: TicketRepository
 ) : ViewModel() {
 
-
-
-    var n = "XTltg.png"
+ 
     private var _currentTicket= MutableLiveData<Tickets>()
 
 
