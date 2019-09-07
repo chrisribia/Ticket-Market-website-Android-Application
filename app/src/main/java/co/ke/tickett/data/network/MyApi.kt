@@ -1,11 +1,8 @@
 package co.ke.tickett.data.network
 
-import co.ke.tickett.data.db.entity.Tickets
 import co.ke.tickett.data.network.Response.AuthResponse
-import co.ke.tickett.data.network.Response.TicketsResponse
+import co.ke.tickett.data.network.Response.EventsResponse
 import okhttp3.OkHttpClient
-import okhttp3.ResponseBody
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,9 +21,9 @@ interface MyApi {
         password: String
     ) : Response<AuthResponse>
 
-    @GET("qr_codes.php")
-    suspend fun getTickets() : Response<TicketsResponse>
 
+    @GET("qr_codes.php")
+    suspend fun getEvents() : Response<EventsResponse>
 
     companion object{
         operator fun invoke(

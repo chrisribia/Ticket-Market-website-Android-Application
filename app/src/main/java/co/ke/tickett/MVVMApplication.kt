@@ -1,13 +1,10 @@
 package co.ke.tickett
 
 import android.app.Application
-import co.ke.tickett.data.PreferenceProvider
 import co.ke.tickett.data.db.AppDatabase
 import co.ke.tickett.data.network.MyApi
 import co.ke.tickett.data.network.NetworkConnectionInterceptor
-import co.ke.tickett.data.repository.TicketRepository
 import co.ke.tickett.data.repository.UserRepository
-import co.ke.tickett.ui.HomeFragment.HomeFragmentViewModelFactory
 import co.ke.tickett.ui.login.AuthViewModelFactory
 import co.ke.tickett.ui.home.HomeViewModelFactory
 import co.ke.tickett.ui.profileFragment.ProfileViewModelFactory
@@ -27,13 +24,10 @@ class MVVMApplication : Application(), KodeinAware {
         bind() from singleton { NetworkConnectionInterceptor(instance()) }
         bind() from singleton { MyApi(instance()) }
         bind() from singleton { AppDatabase(instance()) }
-        bind() from singleton { PreferenceProvider(instance()) }
         bind() from singleton { UserRepository(instance(), instance()) }
-        bind() from singleton { TicketRepository(instance(), instance(),instance()) }
         bind() from provider { AuthViewModelFactory(instance()) }
         bind() from provider { HomeViewModelFactory(instance()) }
         bind() from provider { ProfileViewModelFactory(instance()) }
-        bind() from provider { HomeFragmentViewModelFactory(instance()) }
 
 
     }

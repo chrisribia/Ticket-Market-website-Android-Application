@@ -5,14 +5,15 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import co.ke.tickett.data.db.entity.Tickets
-
+import co.ke.tickett.data.db.entity.Events
 
 @Dao
-interface TicketDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun saveAllTickets(tickets : List<Tickets>)
+interface EventsDao {
 
-    @Query("SELECT * FROM Tickets WHERE qr_code =:qr_code")
-    fun getTicket(qr_code : String) : LiveData<Tickets>
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun saveAllEvents(quotes : List<Events>)
+
+
+    @Query("SELECT * FROM Events WHERE qr_code = :qr_code")
+    fun findEmployee(qr_code: Int): LiveData<Events>
 }

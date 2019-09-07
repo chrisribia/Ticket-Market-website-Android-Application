@@ -2,10 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/vav_graph"
-        app:startDestination="@id/homeFragment">
+        app:startDestination="@id/scanFragment">
 
-    <fragment android:id="@+id/homeFragment" android:name="co.ke.tickett.ui.HomeFragment.HomeFragment"
-              android:label="home_fragment" tools:layout="@layout/home_fragment"/>
     <fragment android:id="@+id/profileFragment" android:name="co.ke.tickett.ui.profileFragment.ProfileFragment"
               android:label="profile_fragment" tools:layout="@layout/profile_fragment"/>
+    <fragment
+            android:id="@+id/scanFragment"
+            android:name="co.ke.tickett.ui.ScannFragment.ScanFragment"
+            android:label="scan_fragment"
+            tools:layout="@layout/scan_fragment" />
 </navigation>
