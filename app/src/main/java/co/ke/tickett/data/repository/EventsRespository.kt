@@ -8,7 +8,8 @@ import co.ke.tickett.data.network.SafeApiRequest
 import co.ke.tickett.utils.Coroutines
 
 class EventsRespository(private val api: MyApi,
-                        private val db: AppDatabase) : SafeApiRequest() {
+                        private val db: AppDatabase) :
+    SafeApiRequest() {
 
     private val events = MutableLiveData<List<Events>>()
 
@@ -21,7 +22,7 @@ class EventsRespository(private val api: MyApi,
 
     suspend fun fetchTickets() {
             val response = apiRequest { api.getEvents() }
-            events.postValue(response.Tickets)
+            events.postValue(response.Events)
 
     }
     private fun saveEvents(events: List<Events>) {
