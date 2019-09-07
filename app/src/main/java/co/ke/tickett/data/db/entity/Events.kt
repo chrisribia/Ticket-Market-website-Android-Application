@@ -11,6 +11,6 @@ data class Events(
     val attended : Int?,
     val event_name : String?,
     val ticket_type : String?,
-    val no_of_tickets : String?,
+    val no_of_tickets : Int?,
     val ticket_price : String?
 )

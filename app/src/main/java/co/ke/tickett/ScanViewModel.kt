@@ -1,4 +1,4 @@
-package co.ke.tickett.ui.ScannFragment
+package co.ke.tickett
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
