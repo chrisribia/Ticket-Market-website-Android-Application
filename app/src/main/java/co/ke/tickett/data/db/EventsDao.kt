@@ -15,5 +15,5 @@ interface EventsDao {
 
 
     @Query("SELECT * FROM Events WHERE qr_code = :qr_code")
-    fun findEmployee(qr_code: Int): LiveData<Events>
+    fun findEvent(qr_code: String): LiveData<Events>
 }
