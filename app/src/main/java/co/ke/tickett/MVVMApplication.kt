@@ -4,6 +4,7 @@ import android.app.Application
 import co.ke.tickett.data.db.AppDatabase
 import co.ke.tickett.data.network.MyApi
 import co.ke.tickett.data.network.NetworkConnectionInterceptor
+import co.ke.tickett.data.repository.EventsRespository
 import co.ke.tickett.data.repository.UserRepository
 import co.ke.tickett.ui.login.AuthViewModelFactory
 import co.ke.tickett.ui.home.HomeViewModelFactory
@@ -25,6 +26,7 @@ class MVVMApplication : Application(), KodeinAware {
         bind() from singleton { MyApi(instance()) }
         bind() from singleton { AppDatabase(instance()) }
         bind() from singleton { UserRepository(instance(), instance()) }
+        bind() from singleton { EventsRespository(instance(), instance()) }
         bind() from provider { AuthViewModelFactory(instance()) }
         bind() from provider { HomeViewModelFactory(instance()) }
         bind() from provider { ProfileViewModelFactory(instance()) }
