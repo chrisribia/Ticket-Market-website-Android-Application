@@ -7,6 +7,7 @@ import co.ke.tickett.data.network.NetworkConnectionInterceptor
 import co.ke.tickett.data.repository.EventsRespository
 import co.ke.tickett.data.repository.UserRepository
 import co.ke.tickett.ui.ScannFragment.ScanViewModelFactory
+import co.ke.tickett.ui.StatFragment.StatsViewModelFactory
 import co.ke.tickett.ui.login.AuthViewModelFactory
 import co.ke.tickett.ui.home.HomeViewModelFactory
 import co.ke.tickett.ui.profileFragment.ProfileViewModelFactory
@@ -32,6 +33,7 @@ class MVVMApplication : Application(), KodeinAware {
         bind() from provider { HomeViewModelFactory(instance()) }
         bind() from provider { ProfileViewModelFactory(instance()) }
         bind() from provider { ScanViewModelFactory(instance()) }
+        bind() from provider { StatsViewModelFactory(instance()) }
 
 
     }

@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        >
+    <data>
+        <variable
+                name="viewmodel"
+                type="co.ke.tickett.StatsViewModel" />
+    </data>
+<FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="30dp"
+        android:layout_gravity="center"
         tools:context=".ui.StatFragment.StatsFragment">
 
-    <TextView
+    <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello" />
+            android:gravity="center"
+            android:layout_height="match_parent">
+        <TableRow>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:text="Remain Tickets :" />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:text="00.00" />
+        </TableRow>
+    </TableLayout>
 
 </FrameLayout>
+</layout>
