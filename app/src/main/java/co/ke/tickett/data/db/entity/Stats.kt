@@ -1,8 +1,11 @@
 package co.ke.tickett.data.db.entity
 
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+@Entity
 data class Stats(
     @PrimaryKey(autoGenerate = false)
-    val balance: Int?
+    val id: Int?,
+    val balance : Int?
 )
