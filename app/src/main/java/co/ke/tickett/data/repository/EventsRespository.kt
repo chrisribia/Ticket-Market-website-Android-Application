@@ -20,6 +20,10 @@ class EventsRespository(private val api: MyApi,
         events.observeForever {
             saveEvents(it)
         }
+
+        balance.observeForever {
+            saveBalance(it)
+        }
     }
 
     suspend fun fetchTickets() {
