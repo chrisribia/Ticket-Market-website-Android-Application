@@ -4,16 +4,19 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/vav_graph"
         app:startDestination="@id/scanFragment">
 
-    <fragment android:id="@+id/profileFragment" android:name="co.ke.tickett.ui.profileFragment.ProfileFragment"
-              android:label="profile_fragment" tools:layout="@layout/profile_fragment"/>
+    <fragment
+            android:id="@+id/profileFragment"
+            android:name="co.ke.tickett.ui.profileFragment.ProfileFragment"
+            android:label="User Profile"
+            tools:layout="@layout/profile_fragment" />
     <fragment
             android:id="@+id/scanFragment"
             android:name="co.ke.tickett.ui.ScannFragment.ScanFragment"
-            android:label="scan_fragment"
+            android:label="Scan Results"
             tools:layout="@layout/scan_fragment" />
     <fragment
             android:id="@+id/statsFragment"
             android:name="co.ke.tickett.ui.StatFragment.StatsFragment"
-            android:label="stats_fragment"
+            android:label="Number of Uncormed Tickets"
             tools:layout="@layout/stats_fragment" />
 </navigation>
