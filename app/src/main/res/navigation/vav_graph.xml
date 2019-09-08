@@ -7,7 +7,7 @@
     <fragment
             android:id="@+id/profileFragment"
             android:name="co.ke.tickett.ui.profileFragment.ProfileFragment"
-            android:label="User Profile"
+            android:label="User Profile Details"
             tools:layout="@layout/profile_fragment" />
     <fragment
             android:id="@+id/scanFragment"
@@ -17,6 +17,6 @@
     <fragment
             android:id="@+id/statsFragment"
             android:name="co.ke.tickett.ui.StatFragment.StatsFragment"
-            android:label="Number of Uncormed Tickets"
+            android:label="No: of Uncormed Tickets"
             tools:layout="@layout/stats_fragment" />
 </navigation>
