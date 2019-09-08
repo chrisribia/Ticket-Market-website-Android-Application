@@ -11,4 +11,9 @@
             android:name="co.ke.tickett.ui.ScannFragment.ScanFragment"
             android:label="scan_fragment"
             tools:layout="@layout/scan_fragment" />
+    <fragment
+            android:id="@+id/statsFragment"
+            android:name="co.ke.tickett.ui.StatFragment.StatsFragment"
+            android:label="stats_fragment"
+            tools:layout="@layout/stats_fragment" />
 </navigation>
