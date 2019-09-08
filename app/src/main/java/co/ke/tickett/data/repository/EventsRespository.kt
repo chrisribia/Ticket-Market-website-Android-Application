@@ -13,6 +13,7 @@ class EventsRespository(private val api: MyApi,
     SafeApiRequest() {
 
     private val events = MutableLiveData<List<Events>>()
+    private val balance = MutableLiveData<List<Stats>>()
 
 
     init {
@@ -26,6 +27,13 @@ class EventsRespository(private val api: MyApi,
             events.postValue(response.Events)
 
     }
+
+    suspend fun fetchTicketBalance(){
+        val response = apiRequest { api.getBalance() }
+        balance.postValue(response.balance)
+    }
+
+
     private fun saveEvents(events: List<Events>) {
         Coroutines.io {
             db.getEventsDao().saveAllEvents(events)
