@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
 
             android:gravity="center"
-            android:padding="30dp">
+            android:padding="15dp">
         <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
@@ -38,37 +38,6 @@
                     android:layout_height="match_parent"
                     android:text="Ticket Details" />
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:text="@{viewmodel.currentTickets.no_of_tickets.toString()}"
-                    android:layout_height="match_parent"
-                     />
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:text="@{viewmodel.currentTickets.attended.toString()}"
-                    android:layout_marginBottom="15dp"
-                    android:layout_height="match_parent" />
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_marginBottom="30dp"
-                    android:layout_height="match_parent"
-                    android:text="@{viewmodel.currentTickets.event_name}" />
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_marginBottom="30dp"
-                    android:text="@{viewmodel.currentTickets.ticket_price}"
-                    android:layout_height="wrap_content" />
-
-            <Button
-                    android:layout_width="wrap_content"
-                    android:text="Confirm"
-                    android:textAllCaps="false"
-                    android:textColor="@color/cardview_dark_background"
-                    android:backgroundTint="@color/cardview_light_background"
-                    android:layout_height="wrap_content" />
-
             <TableLayout
                     android:layout_width="match_parent"
                     android:stretchColumns="*"
@@ -81,18 +50,82 @@
                         android:layout_marginBottom="30dp"
                         android:textStyle="italic"
                         android:layout_height="match_parent"
-                        android:text="Ticket Type" />
+                        android:text="Ticket Type :" />
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="@{viewmodel.currentTickets.ticket_type}"
                         android:layout_marginBottom="15dp" />
             </TableRow>
+                <TableRow>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:textStyle="italic"
+                            android:layout_height="match_parent"
+                            android:text="Number of Tickets :" />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:text="@{viewmodel.currentTickets.no_of_tickets.toString()}"
+                            android:layout_height="match_parent"
+                            />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:textStyle="italic"
+                            android:layout_height="match_parent"
+                            android:text="Ticket Status :" />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@{viewmodel.currentTickets.attended.toString()}"
+                            android:layout_marginBottom="15dp"
+                            android:layout_height="match_parent" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:textStyle="italic"
+                            android:layout_height="match_parent"
+                            android:text="Event Name :" />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginBottom="30dp"
+                            android:layout_height="match_parent"
+                            android:text="@{viewmodel.currentTickets.event_name}" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="30dp"
+                            android:textStyle="italic"
+                            android:layout_height="match_parent"
+                            android:text="Ticket Price :" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginBottom="30dp"
+                            android:text="@{viewmodel.currentTickets.ticket_price}"
+                            android:layout_height="wrap_content" />
+                </TableRow>
 
 
             </TableLayout>
 
-
+            <Button
+                    android:layout_width="wrap_content"
+                    android:text="Confirm"
+                    android:textAllCaps="false"
+                    android:textColor="@color/cardview_dark_background"
+                    android:backgroundTint="@color/cardview_light_background"
+                    android:layout_height="wrap_content" />
         </LinearLayout>
 
     </RelativeLayout>
