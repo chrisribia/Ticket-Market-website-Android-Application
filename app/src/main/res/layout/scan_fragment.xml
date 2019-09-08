@@ -13,9 +13,8 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:gravity="center"
-            android:padding="15dp">
+            android:padding="8dp">
         <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
@@ -32,8 +31,8 @@
 
             <TextView
                     android:layout_width="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:textStyle="italic"
                     android:layout_height="match_parent"
                     android:text="Ticket Details" />
@@ -41,13 +40,13 @@
             <TableLayout
                     android:layout_width="match_parent"
                     android:stretchColumns="*"
-                    android:padding="12dp"
+                    android:padding="5dp"
                     android:layout_height="match_parent">
                 <TableRow>
                 <TextView
                         android:layout_width="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:textStyle="italic"
                         android:layout_height="match_parent"
                         android:text="Ticket Type :" />
@@ -55,19 +54,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="@{viewmodel.currentTickets.ticket_type}"
-                        android:layout_marginBottom="15dp" />
+                        android:layout_marginBottom="5dp" />
             </TableRow>
                 <TableRow>
                     <TextView
                             android:layout_width="wrap_content"
-                            android:layout_marginTop="30dp"
-                            android:layout_marginBottom="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
                             android:textStyle="italic"
                             android:layout_height="match_parent"
                             android:text="Number of Tickets :" />
                     <TextView
                             android:layout_width="wrap_content"
-                            android:layout_marginBottom="15dp"
+                            android:layout_marginBottom="5dp"
                             android:text="@{viewmodel.currentTickets.no_of_tickets.toString()}"
                             android:layout_height="match_parent"
                             />
@@ -75,28 +74,28 @@
                 <TableRow>
                     <TextView
                             android:layout_width="wrap_content"
-                            android:layout_marginTop="30dp"
-                            android:layout_marginBottom="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
                             android:textStyle="italic"
                             android:layout_height="match_parent"
                             android:text="Ticket Status :" />
                     <TextView
                             android:layout_width="wrap_content"
                             android:text="@{viewmodel.currentTickets.attended.toString()}"
-                            android:layout_marginBottom="15dp"
+                            android:layout_marginBottom="5dp"
                             android:layout_height="match_parent" />
                 </TableRow>
                 <TableRow>
                     <TextView
                             android:layout_width="wrap_content"
-                            android:layout_marginTop="30dp"
-                            android:layout_marginBottom="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
                             android:textStyle="italic"
                             android:layout_height="match_parent"
                             android:text="Event Name :" />
                     <TextView
                             android:layout_width="wrap_content"
-                            android:layout_marginBottom="30dp"
+                            android:layout_marginBottom="5dp"
                             android:layout_height="match_parent"
                             android:text="@{viewmodel.currentTickets.event_name}" />
                 </TableRow>
@@ -111,7 +110,7 @@
 
                     <TextView
                             android:layout_width="wrap_content"
-                            android:layout_marginBottom="30dp"
+                            android:layout_marginBottom="5dp"
                             android:text="@{viewmodel.currentTickets.ticket_price}"
                             android:layout_height="wrap_content" />
                 </TableRow>
