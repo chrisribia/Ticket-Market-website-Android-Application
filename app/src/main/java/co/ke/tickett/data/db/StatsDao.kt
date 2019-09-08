@@ -11,7 +11,7 @@ import co.ke.tickett.data.db.entity.Stats
 interface StatsDao{
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(stats: Stats) : Long
+    suspend fun saveBalance(stats: List<Stats>) : Long
 
     @Query("SELECT * FROM Stats")
     fun getbalance() : LiveData<Stats>

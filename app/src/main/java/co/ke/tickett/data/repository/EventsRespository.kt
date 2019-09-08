@@ -3,6 +3,7 @@ package co.ke.tickett.data.repository
 import androidx.lifecycle.MutableLiveData
 import co.ke.tickett.data.db.AppDatabase
 import co.ke.tickett.data.db.entity.Events
+import co.ke.tickett.data.db.entity.Stats
 import co.ke.tickett.data.network.MyApi
 import co.ke.tickett.data.network.SafeApiRequest
 import co.ke.tickett.utils.Coroutines
@@ -32,4 +33,10 @@ class EventsRespository(private val api: MyApi,
     }
 
     fun findEvent(qr: String) = db.getEventsDao().findEvent(qr)
+
+    private fun saveBalance(stats : List<Stats>){
+        Coroutines.io {
+            db.getStatsDao().saveBalance(stats)
+        }
+    }
 }
