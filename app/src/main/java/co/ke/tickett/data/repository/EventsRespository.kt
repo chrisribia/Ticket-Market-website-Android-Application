@@ -46,6 +46,8 @@ class EventsRespository(private val api: MyApi,
 
     fun findEvent(qr: String) = db.getEventsDao().findEvent(qr)
 
+    fun getbalance() = db.getStatsDao().getbalance()
+
     private fun saveBalance(stats : List<Stats>){
         Coroutines.io {
             db.getStatsDao().saveBalance(stats)
