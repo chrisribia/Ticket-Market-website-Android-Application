@@ -8,6 +8,11 @@
         android:title="Home"
         />
 
+        <item
+                android:id="@+id/statsFragment"
+                android:icon="@drawable/ic_balance"
+                android:title="tickets balance"
+                />
 
         <item
         android:id="@+id/profileFragment"
