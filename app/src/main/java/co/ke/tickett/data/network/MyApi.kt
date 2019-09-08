@@ -25,6 +25,8 @@ interface MyApi {
     @GET("qr_codes.php")
     suspend fun getEvents() : Response<EventsResponse>
 
+
+
     companion object{
         operator fun invoke(
             networkConnectionInterceptor: NetworkConnectionInterceptor
