@@ -15,8 +15,8 @@
             android:label="Scan Results"
             tools:layout="@layout/scan_fragment" >
         <action
-                android:id="@+id/scannerAction"
-                app:destination="@id/qrFragment" />
+                android:id="@+id/action_scanFragment_to_homeFragment"
+                app:destination="@id/homeFragment" />
     </fragment>
     <fragment
             android:id="@+id/statsFragment"
@@ -36,5 +36,9 @@
             android:id="@+id/homeFragment"
             android:name="co.ke.tickett.ui.HomeFragment.HomeFragment"
             android:label="home_fragment"
-            tools:layout="@layout/home_fragment" />
+            tools:layout="@layout/home_fragment" >
+        <action
+                android:id="@+id/action_homeFragment_to_qrFragment"
+                app:destination="@id/qrFragment" />
+    </fragment>
 </navigation>

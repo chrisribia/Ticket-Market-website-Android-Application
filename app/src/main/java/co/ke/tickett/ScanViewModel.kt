@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.data.repository.EventsRespository
-import co.ke.tickett.ui.ScannFragment.ScanFragmentDirections
 import co.ke.tickett.utils.Coroutines
 
 class ScanViewModel(
@@ -35,7 +34,7 @@ class ScanViewModel(
     }
 
     fun toQrScanner(view: View){
-        val action = ScanFragmentDirections.scannerAction()
-        Navigation.findNavController(view).navigate(action)
+        //val action = ScanFragmentDirections.scannerAction()
+       // Navigation.findNavController(view).navigate(action)
     }
 }

@@ -11,16 +11,24 @@
         android:gravity="center"
         android:layout_height="match_parent"
         >
-
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
 
     <ImageView
             android:layout_marginTop="70dp"
             android:layout_width="150dp"
             android:src="@drawable/qr"
             android:scaleType="centerCrop"
+            android:layout_marginBottom="50dp"
             android:layout_centerHorizontal="true"
             android:contentDescription="Tap Me"
             android:layout_height="150dp"/>
+
+
+    </LinearLayout>
 </RelativeLayout>
 
 </layout>
