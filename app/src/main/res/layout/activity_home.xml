@@ -29,8 +29,8 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
-            app:itemTextColor="@color/colorPrimary"
-            android:background="@android:color/white"
+            app:itemTextColor="@android:color/white"
+           android:background="@color/colorAccent"
             android:layout_height="wrap_content"
             app:menu="@menu/nav_menu"
     />
