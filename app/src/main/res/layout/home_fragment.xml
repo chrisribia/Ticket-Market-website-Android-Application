@@ -2,9 +2,13 @@
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-
         tools:context=".ui.HomeFragment.HomeFragment"
         >
+    <data>
+        <variable
+                name="viewmodel"
+                type="co.ke.tickett.HomeViewModel" />
+    </data>
 <RelativeLayout
         android:layout_width="match_parent"
         android:padding="50dp"
@@ -21,9 +25,11 @@
             android:layout_marginTop="70dp"
             android:layout_width="150dp"
             android:src="@drawable/qr"
+            android:onClick="@{viewmodel::onCamera}"
             android:scaleType="centerCrop"
             android:layout_marginBottom="50dp"
             android:layout_centerHorizontal="true"
+            android:id="@+id/mmm"
             android:contentDescription="Tap Me"
             android:layout_height="150dp"/>
 
