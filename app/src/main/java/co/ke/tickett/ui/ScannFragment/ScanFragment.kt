@@ -38,12 +38,31 @@ class ScanFragment : Fragment() , KodeinAware {
         viewModel = ViewModelProviders.of(this, factory).get(ScanViewModel::class.java)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
-        //scanFromFragment()
+        scanFromFragment()
         return binding.root
     }
 
 
 
+    fun scanFromFragment() {
+        IntentIntegrator.forSupportFragment(this).initiateScan()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+
+        if(result != null) {
+            if(result.getContents() == null) {
+                context?.toast("Cancelled from fragment")
+            } else {
+                viewModel.findEmployee(result.getContents())
+
+            }
+
+
+        }
+
+    }
 
 
 

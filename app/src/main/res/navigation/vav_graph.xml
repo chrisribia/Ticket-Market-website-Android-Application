@@ -24,21 +24,12 @@
             android:label="No: of Uncormed Tickets"
             tools:layout="@layout/stats_fragment" />
     <fragment
-            android:id="@+id/qrFragment"
-            android:name="co.ke.tickett.ui.QrReaderFragment.QrFragment"
-            android:label="qr_fragment"
-            tools:layout="@layout/qr_fragment" >
-        <action
-                android:id="@+id/action_qrFragment_to_scanFragment"
-                app:destination="@id/scanFragment" />
-    </fragment>
-    <fragment
             android:id="@+id/homeFragment"
             android:name="co.ke.tickett.ui.HomeFragment.HomeFragment"
-            android:label="home_fragment"
-            tools:layout="@layout/home_fragment" >
+            android:label="Welcome home"
+            tools:layout="@layout/home_fragment">
         <action
-                android:id="@+id/action_homeFragment_to_qrFragment"
-                app:destination="@id/qrFragment" />
+                android:id="@+id/action_homeFragment_to_scanFragment"
+                app:destination="@id/scanFragment" />
     </fragment>
 </navigation>

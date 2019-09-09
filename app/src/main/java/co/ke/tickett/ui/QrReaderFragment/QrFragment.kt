@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 
 import co.ke.tickett.R
 import co.ke.tickett.utils.toast
@@ -17,16 +18,16 @@ class QrFragment : Fragment() {
     companion object {
         fun newInstance() = QrFragment()
     }
-
+lateinit var mView : View
     private lateinit var viewModel: QrViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view : View = inflater.inflate(R.layout.qr_fragment, container, false)
+        mView = inflater.inflate(R.layout.qr_fragment, container, false)
         scanFromFragment()
-        return view
+        return mView
     }
 
     fun scanFromFragment() {
@@ -41,6 +42,9 @@ class QrFragment : Fragment() {
                 context?.toast("Cancelled from fragment")
             } else {
                 context?.toast(result.getContents())
+                val action = QrFragmentDirections.actionQrFragmentToScanFragment()
+                Navigation.findNavController(mView).navigate(action)
+
             }
 
 

@@ -7,7 +7,7 @@ import co.ke.tickett.ui.HomeFragment.HomeFragmentDirections
 
 class HomeViewModel : ViewModel() {
 fun onCamera(view : View){
-    val action = HomeFragmentDirections.actionHomeFragmentToQrFragment()
+    val action = HomeFragmentDirections.actionHomeFragmentToScanFragment()
     Navigation.findNavController(view).navigate(action)
 }
 
