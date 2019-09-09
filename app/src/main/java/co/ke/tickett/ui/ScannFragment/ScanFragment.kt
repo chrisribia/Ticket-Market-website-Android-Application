@@ -45,23 +45,6 @@ class ScanFragment : Fragment() , KodeinAware {
 
 
 
-    fun scanFromFragment() {
-        IntentIntegrator.forSupportFragment(this).initiateScan()
-    }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-
-        if(result != null) {
-            if(result.getContents() == null) {
-                context?.toast("Cancelled from fragment")
-            } else {
-                viewModel.findEmployee(result.getContents())
-            }
-
-
-        }
-
-    }
 
 }
