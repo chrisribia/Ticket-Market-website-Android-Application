@@ -9,11 +9,13 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 import co.ke.tickett.R
 import co.ke.tickett.ScanViewModel
 import co.ke.tickett.databinding.ScanFragmentBinding
 import co.ke.tickett.utils.toast
 import com.google.zxing.integration.android.IntentIntegrator
+import kotlinx.android.synthetic.main.scan_fragment.*
 
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
@@ -36,9 +38,11 @@ class ScanFragment : Fragment() , KodeinAware {
         viewModel = ViewModelProviders.of(this, factory).get(ScanViewModel::class.java)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
-        scanFromFragment()
+        //scanFromFragment()
         return binding.root
     }
+
+
 
 
     fun scanFromFragment() {
