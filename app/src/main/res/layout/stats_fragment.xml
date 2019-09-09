@@ -38,7 +38,7 @@
                     android:layout_marginBottom="5dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textColor="@android:color/holo_red_light"
+                    android:textColor="@android:color/white"
                     android:layout_height="match_parent"
                     android:text="@{viewmodel.currentBalance.balance.toString()}" />
         </TableRow>
