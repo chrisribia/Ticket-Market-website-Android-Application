@@ -13,10 +13,23 @@
             android:id="@+id/scanFragment"
             android:name="co.ke.tickett.ui.ScannFragment.ScanFragment"
             android:label="Scan Results"
-            tools:layout="@layout/scan_fragment" />
+            tools:layout="@layout/scan_fragment" >
+        <action
+                android:id="@+id/scannerAction"
+                app:destination="@id/qrFragment" />
+    </fragment>
     <fragment
             android:id="@+id/statsFragment"
             android:name="co.ke.tickett.ui.StatFragment.StatsFragment"
             android:label="No: of Uncormed Tickets"
             tools:layout="@layout/stats_fragment" />
+    <fragment
+            android:id="@+id/qrFragment"
+            android:name="co.ke.tickett.ui.QrReaderFragment.QrFragment"
+            android:label="qr_fragment"
+            tools:layout="@layout/qr_fragment" >
+        <action
+                android:id="@+id/action_qrFragment_to_scanFragment"
+                app:destination="@id/scanFragment" />
+    </fragment>
 </navigation>
