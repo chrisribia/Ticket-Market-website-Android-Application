@@ -7,6 +7,7 @@ import co.ke.tickett.data.db.entity.Stats
 import co.ke.tickett.data.network.MyApi
 import co.ke.tickett.data.network.SafeApiRequest
 import co.ke.tickett.utils.Coroutines
+import java.lang.Exception
 
 class EventsRespository(private val api: MyApi,
                         private val db: AppDatabase) :
@@ -33,8 +34,13 @@ class EventsRespository(private val api: MyApi,
     }
 
     suspend fun fetchTicketBalance(){
+        try{
         val response = apiRequest { api.getBalance() }
         balance.postValue(response.balance)
+        }
+        catch(e: Exception){
+            e.printStackTrace()
+        }
     }
 
 
