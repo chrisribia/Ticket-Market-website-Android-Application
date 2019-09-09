@@ -14,7 +14,7 @@ import retrofit2.http.POST
 interface MyApi {
 
     @FormUrlEncoded
-    @POST("userlogin.php")
+    @POST("userLogin.php")
     suspend fun userLogin(
         @Field("email")
         email: String,
@@ -41,7 +41,7 @@ interface MyApi {
 
             return Retrofit.Builder()
                 .client(okkHttpclient)
-                .baseUrl("http://192.198.0.2/android/v1/")
+                .baseUrl("https://www.ticketmarket.co.ke/Android/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(MyApi::class.java)
