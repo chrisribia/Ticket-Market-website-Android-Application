@@ -19,14 +19,10 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_height="wrap_content">
+<ImageView
+        android:layout_width="match_parent"
 
-            <Button
-                    android:layout_width="wrap_content"
-                    android:text="Scan"
-                    android:textColor="@color/cardview_dark_background"
-                    android:backgroundTint="@color/cardview_light_background"
-                    android:textAllCaps="false"
-                    android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
             <TextView
                     android:layout_width="wrap_content"
