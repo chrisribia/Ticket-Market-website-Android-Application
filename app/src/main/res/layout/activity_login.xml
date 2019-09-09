@@ -19,10 +19,16 @@
                   android:orientation="vertical"
                   android:layout_marginTop="100dp"
                   android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:padding="5dp"
+                android:scaleType="center"
+                android:src="@drawable/logo"
+                android:layout_height="wrap_content"/>
 
         <TextView
                 android:layout_width="wrap_content"
-                android:text=" Welcome ..."
+
 
                 android:textStyle="bold"
                 android:textSize="25dp"
@@ -33,14 +39,14 @@
 
                 <EditText android:layout_width="match_parent"
                           android:text="@={viewmodel.email}"
-                          android:hint="email .."
+                          android:hint="Email .."
                         android:textColor="@android:color/white"
                         android:layout_marginBottom="30dp"
                           android:inputType="textEmailAddress"
                           android:layout_height="wrap_content"/>
                 <EditText android:layout_width="match_parent"
                           android:text="@={viewmodel.password}"
-                          android:hint="password .."
+                          android:hint="Password .."
                         android:textColor="@android:color/white"
                           android:inputType="textPassword"
                         android:layout_marginBottom="30dp"
