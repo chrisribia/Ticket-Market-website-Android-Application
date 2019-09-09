@@ -1,4 +1,4 @@
 # Ticket-Market-website-Android-Application for 
 https://ticketmarket.co.ke/site
 
-![alt text](https://tse2.mm.bing.net/th?id=OIP.2s58zRX4TE17QE1sSTWAjwHaO0&pid=Api&P=0&w=300&h=300)
+![alt text](https://github.com/chrisribia/Ticket-Market-website-Android-Application/blob/master/app/src/main/java/co/ke/tickett/Resources/Screenshot_2019-09-09-14-15-46-58.png)
