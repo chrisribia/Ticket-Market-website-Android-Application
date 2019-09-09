@@ -2,6 +2,7 @@
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+
         tools:context=".ui.HomeFragment.HomeFragment"
         >
     <data>
@@ -11,12 +12,14 @@
     </data>
 <RelativeLayout
         android:layout_width="match_parent"
+        android:background="@color/colorAccent"
         android:padding="50dp"
         android:gravity="center"
         android:layout_height="match_parent"
         >
     <TextView
             android:layout_marginTop="50dp"
+            android:textColor="@android:color/white"
             android:layout_width="match_parent"
             android:text="Welcome to ticket Market \n Tap Below To Scan"
             android:gravity="center"

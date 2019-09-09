@@ -42,8 +42,7 @@ lateinit var mView : View
                 context?.toast("Cancelled from fragment")
             } else {
                 context?.toast(result.getContents())
-                val action = QrFragmentDirections.actionQrFragmentToScanFragment()
-                Navigation.findNavController(mView).navigate(action)
+
 
             }
 
