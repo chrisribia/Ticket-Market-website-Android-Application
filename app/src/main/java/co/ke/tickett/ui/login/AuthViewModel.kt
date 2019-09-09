@@ -19,7 +19,7 @@ class AuthViewModel(
 
 
     fun onlogin(view: View){
-        authListener?.onStarted("")
+        authListener?.onStarted()
         if(email.isNullOrEmpty() || password.isNullOrEmpty()){
             authListener?.onFailure("Invalid email or password")
             return

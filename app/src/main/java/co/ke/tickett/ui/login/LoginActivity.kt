@@ -10,7 +10,10 @@ import co.ke.tickett.R
 import co.ke.tickett.data.db.entity.User
 import co.ke.tickett.databinding.ActivityLoginBinding
 import co.ke.tickett.ui.home.HomeActivity
+import co.ke.tickett.utils.hide
+import co.ke.tickett.utils.show
 import co.ke.tickett.utils.toast
+import kotlinx.android.synthetic.main.activity_login.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
@@ -42,11 +45,13 @@ class LoginActivity : AppCompatActivity(), AuthListener,KodeinAware{
     }
 
 
-    override fun onStarted(message: String) {
-        toast(message)
+    override fun onStarted() {
+        progress_bar.show()
+
     }
 
     override fun onSuccess(user: User) {
+        progress_bar.hide()
 
     }
 
