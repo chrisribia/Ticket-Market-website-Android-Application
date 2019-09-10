@@ -62,6 +62,7 @@ class EventsRespository(private val api: MyApi,
     }
 
     suspend fun confirmTicket(qr_code : String)  : ConfirmResponse{
+
         return apiRequest {  api.confirmTicket(qr_code)}
     }
 }

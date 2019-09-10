@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.data.repository.EventsRespository
 import co.ke.tickett.utils.Coroutines
+import java.lang.Exception
 
 class ScanViewModel(
     private val repository : EventsRespository
@@ -40,7 +41,12 @@ class ScanViewModel(
 
     fun confirmTicket(view: View){
         Coroutines.io {
-            repository.confirmTicket(qr_code)
+            try {
+
+                repository.confirmTicket(qr_code)
+            }catch (e : Exception){
+                e.printStackTrace()
+            }
         }
     }
 }
