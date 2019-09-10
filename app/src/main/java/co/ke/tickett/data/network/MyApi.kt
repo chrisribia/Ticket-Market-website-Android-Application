@@ -34,8 +34,7 @@ interface MyApi {
     @POST("confirm.php")
     suspend fun confirmTicket(
         @Field("qr_code")
-        qr_code : String
-    )
+        qr_code : String )
             : Response<ConfirmResponse>
 
     companion object{
