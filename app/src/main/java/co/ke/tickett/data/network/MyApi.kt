@@ -2,6 +2,7 @@ package co.ke.tickett.data.network
 
 import co.ke.tickett.data.network.Response.AuthResponse
 import co.ke.tickett.data.network.Response.BalanceResponse
+import co.ke.tickett.data.network.Response.ConfirmResponse
 import co.ke.tickett.data.network.Response.EventsResponse
 import okhttp3.OkHttpClient
 import retrofit2.Response
@@ -29,6 +30,13 @@ interface MyApi {
 
     @GET("unconfirmedTickets.php")
     suspend fun getBalance() : Response<BalanceResponse>
+
+    @POST("confirm.php")
+    suspend fun confirmTicket(
+        @Field("qr_code")
+        qr_code : String
+    )
+            : Response<ConfirmResponse>
 
     companion object{
         operator fun invoke(
