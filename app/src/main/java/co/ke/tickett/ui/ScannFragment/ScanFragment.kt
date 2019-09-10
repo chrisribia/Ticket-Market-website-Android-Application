@@ -21,7 +21,9 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 
-class ScanFragment : Fragment() , KodeinAware {
+class ScanFragment : Fragment() , KodeinAware,ScanListener {
+
+
     override val kodein by kodein()
 
 
@@ -66,5 +68,7 @@ class ScanFragment : Fragment() , KodeinAware {
     }
 
 
-
+    override fun onScanned(message: String) {
+        context?.toast(message)
+    }
 }

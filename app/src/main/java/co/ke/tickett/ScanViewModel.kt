@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.data.repository.EventsRespository
+import co.ke.tickett.ui.ScannFragment.ScanListener
 import co.ke.tickett.utils.Coroutines
 import java.lang.Exception
 
@@ -16,6 +17,7 @@ class ScanViewModel(
   lateinit var qr_code : String
 
     private var _currentEvents= MutableLiveData<Events>()
+    var scanListner : ScanListener? =null
 
 
 
@@ -41,12 +43,8 @@ class ScanViewModel(
 
     fun confirmTicket(view: View){
         Coroutines.io {
-            try {
-
                 repository.confirmTicket(qr_code)
-            }catch (e : Exception){
-                e.printStackTrace()
-            }
+                scanListner?.onScanned("Ticket Confirmed")
         }
     }
 }
