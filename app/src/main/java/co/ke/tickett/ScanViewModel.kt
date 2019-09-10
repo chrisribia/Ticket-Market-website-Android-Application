@@ -8,11 +8,12 @@ import androidx.navigation.Navigation
 import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.data.repository.EventsRespository
 import co.ke.tickett.utils.Coroutines
+import java.lang.Exception
 
 class ScanViewModel(
     private val repository : EventsRespository
 ) : ViewModel() {
-
+  lateinit var qr_code : String
 
     private var _currentEvents= MutableLiveData<Events>()
 
@@ -36,5 +37,16 @@ class ScanViewModel(
     fun toQrScanner(view: View){
         //val action = ScanFragmentDirections.scannerAction()
        // Navigation.findNavController(view).navigate(action)
+    }
+
+    fun confirmTicket(view: View){
+        Coroutines.io {
+            try {
+
+                repository.confirmTicket(qr_code)
+            }catch (e : Exception){
+                e.printStackTrace()
+            }
+        }
     }
 }

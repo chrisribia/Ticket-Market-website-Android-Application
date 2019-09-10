@@ -132,6 +132,7 @@
             <Button
                     android:layout_width="wrap_content"
                     android:text="Confirm"
+                    android:onClick="@{viewmodel::confirmTicket}"
                     android:textAllCaps="false"
                     android:textColor="@color/cardview_dark_background"
                     android:backgroundTint="@color/cardview_light_background"

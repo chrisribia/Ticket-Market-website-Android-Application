@@ -5,6 +5,7 @@ import co.ke.tickett.data.db.AppDatabase
 import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.data.db.entity.Stats
 import co.ke.tickett.data.network.MyApi
+import co.ke.tickett.data.network.Response.ConfirmResponse
 import co.ke.tickett.data.network.SafeApiRequest
 import co.ke.tickett.utils.Coroutines
 import java.lang.Exception
@@ -58,5 +59,10 @@ class EventsRespository(private val api: MyApi,
         Coroutines.io {
             db.getStatsDao().saveBalance(stats)
         }
+    }
+
+    suspend fun confirmTicket(qr_code : String)  : ConfirmResponse{
+
+        return apiRequest {  api.confirmTicket(qr_code)}
     }
 }

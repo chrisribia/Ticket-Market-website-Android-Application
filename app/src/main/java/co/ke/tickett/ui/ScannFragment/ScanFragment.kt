@@ -56,6 +56,7 @@ class ScanFragment : Fragment() , KodeinAware {
                 context?.toast("Cancelled from fragment")
             } else {
                 viewModel.findEmployee(result.getContents())
+                viewModel.qr_code = result.getContents()
 
             }
 

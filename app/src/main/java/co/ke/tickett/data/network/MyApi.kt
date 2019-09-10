@@ -2,6 +2,7 @@ package co.ke.tickett.data.network
 
 import co.ke.tickett.data.network.Response.AuthResponse
 import co.ke.tickett.data.network.Response.BalanceResponse
+import co.ke.tickett.data.network.Response.ConfirmResponse
 import co.ke.tickett.data.network.Response.EventsResponse
 import okhttp3.OkHttpClient
 import retrofit2.Response
@@ -30,6 +31,12 @@ interface MyApi {
     @GET("unconfirmedTickets.php")
     suspend fun getBalance() : Response<BalanceResponse>
 
+    @FormUrlEncoded
+    @POST("confirm.php")
+    suspend fun confirmTicket(
+        @Field("qr_code")
+        qr_code : String )  : Response<ConfirmResponse>
+
     companion object{
         operator fun invoke(
             networkConnectionInterceptor: NetworkConnectionInterceptor
@@ -41,7 +48,7 @@ interface MyApi {
 
             return Retrofit.Builder()
                 .client(okkHttpclient)
-                .baseUrl("https://www.ticketmarket.co.ke/Android/v1/")
+                .baseUrl("http://192.168.0.28/android/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(MyApi::class.java)
