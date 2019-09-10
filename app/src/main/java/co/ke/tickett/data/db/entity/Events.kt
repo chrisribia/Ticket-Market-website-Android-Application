@@ -8,7 +8,7 @@ data class Events(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
     val qr_code: String?,
-    val attended : Int?,
+    val attended : String?,
     val event_name : String?,
     val ticket_type : String?,
     val no_of_tickets : Int?,

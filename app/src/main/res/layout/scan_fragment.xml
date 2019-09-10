@@ -89,7 +89,7 @@
                     <TextView
                             android:textColor="@android:color/white"
                             android:layout_width="wrap_content"
-                            android:text="@{viewmodel.currentTickets.attended.toString()}"
+                            android:text="@{viewmodel.currentTickets.attended}"
                             android:layout_marginBottom="5dp"
                             android:layout_height="match_parent" />
                 </TableRow>
