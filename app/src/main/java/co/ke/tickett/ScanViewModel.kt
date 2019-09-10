@@ -12,7 +12,7 @@ import co.ke.tickett.utils.Coroutines
 class ScanViewModel(
     private val repository : EventsRespository
 ) : ViewModel() {
-
+  lateinit var qr_code : String
 
     private var _currentEvents= MutableLiveData<Events>()
 
@@ -36,5 +36,11 @@ class ScanViewModel(
     fun toQrScanner(view: View){
         //val action = ScanFragmentDirections.scannerAction()
        // Navigation.findNavController(view).navigate(action)
+    }
+
+    fun confirmTicket(view: View){
+        Coroutines.io {
+            repository.confirmTicket(qr_code)
+        }
     }
 }

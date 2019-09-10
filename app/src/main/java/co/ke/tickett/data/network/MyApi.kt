@@ -31,11 +31,11 @@ interface MyApi {
     @GET("unconfirmedTickets.php")
     suspend fun getBalance() : Response<BalanceResponse>
 
+    @FormUrlEncoded
     @POST("confirm.php")
     suspend fun confirmTicket(
         @Field("qr_code")
-        qr_code : String )
-            : Response<ConfirmResponse>
+        qr_code : String )  : Response<ConfirmResponse>
 
     companion object{
         operator fun invoke(
@@ -48,7 +48,7 @@ interface MyApi {
 
             return Retrofit.Builder()
                 .client(okkHttpclient)
-                .baseUrl("https://www.ticketmarket.co.ke/Android/v1/")
+                .baseUrl("http://192.168.0.28/android/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(MyApi::class.java)
