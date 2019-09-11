@@ -34,15 +34,7 @@ class EventsRespository(private val api: MyApi,
 
     }
 
-    suspend fun fetchTicketBalance(){
-        try{
-        val response = apiRequest { api.getBalance() }
-        balance.postValue(response.balance)
-        }
-        catch(e: Exception){
-            e.printStackTrace()
-        }
-    }
+
 
 
     private fun saveEvents(events: List<Events>) {

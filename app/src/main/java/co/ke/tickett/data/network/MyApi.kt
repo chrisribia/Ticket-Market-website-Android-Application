@@ -28,8 +28,6 @@ interface MyApi {
     suspend fun getEvents() : Response<EventsResponse>
 
 
-    @GET("unconfirmedTickets.php")
-    suspend fun getBalance() : Response<BalanceResponse>
 
     @FormUrlEncoded
     @POST("confirm.php")
@@ -48,7 +46,7 @@ interface MyApi {
 
             return Retrofit.Builder()
                 .client(okkHttpclient)
-                .baseUrl("https://www.ticketmarket.co.ke/Android/v1/")
+                .baseUrl("http://192.168.0.28/android/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(MyApi::class.java)
