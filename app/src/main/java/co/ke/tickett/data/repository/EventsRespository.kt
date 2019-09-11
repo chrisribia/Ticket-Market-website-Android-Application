@@ -33,10 +33,6 @@ class EventsRespository(private val api: MyApi,
             events.postValue(response.Events)
 
     }
-
-
-
-
     private fun saveEvents(events: List<Events>) {
         Coroutines.io {
             db.getEventsDao().saveAllEvents(events)
@@ -44,8 +40,6 @@ class EventsRespository(private val api: MyApi,
     }
 
     fun findEvent(qr: String) = db.getEventsDao().findEvent(qr)
-
-    fun getbalance() = db.getStatsDao().getbalance()
 
     private fun saveBalance(stats : List<Stats>){
         Coroutines.io {
@@ -57,4 +51,7 @@ class EventsRespository(private val api: MyApi,
 
         return apiRequest {  api.confirmTicket(qr_code)}
     }
+
+
+    fun getEventByCode(ticket_code : String) = db.getEventsDao().findEventByCode(ticket_code)
 }
