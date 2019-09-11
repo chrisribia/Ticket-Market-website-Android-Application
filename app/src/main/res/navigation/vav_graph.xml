@@ -38,8 +38,8 @@
     <fragment
             android:id="@+id/codeFragment"
             android:name="co.ke.tickett.ui.CodeFragment.CodeFragment"
-            android:label="code_fragment"
-            tools:layout="@layout/code_fragment" >
+            android:label="Please Ticket Code ?..."
+            tools:layout="@layout/code_fragment">
         <action
                 android:id="@+id/action_codeFragment_to_homeFragment"
                 app:destination="@id/homeFragment" />
