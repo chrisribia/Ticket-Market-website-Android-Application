@@ -15,9 +15,25 @@
             android:padding="8dp">
 
         <LinearLayout
+                android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
                 android:orientation="horizontal"
                 android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_search_black_24dp"
+                    android:layout_height="20dp"/>
+            <EditText
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:hint="Enter Ticket Code Here?..."
+                    android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
@@ -25,16 +41,9 @@
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:layout_marginTop="80dp"
                 android:layout_height="wrap_content">
-            <ImageView
-                    android:layout_marginTop="70dp"
-                    android:layout_width="50dp"
-                    android:src="@drawable/qr"
-                    android:scaleType="centerCrop"
 
-                    android:layout_centerHorizontal="true"
-                    android:contentDescription="@null"
-                    android:layout_height="50dp"/>
 
             <TextView
                     android:layout_width="wrap_content"
