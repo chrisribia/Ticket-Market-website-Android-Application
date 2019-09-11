@@ -11,4 +11,9 @@ fun onCamera(view : View){
     Navigation.findNavController(view).navigate(action)
 }
 
+    fun onEnterCOde(view : View){
+        val action = HomeFragmentDirections.actionHomeFragmentToCodeFragment()
+        Navigation.findNavController(view).navigate(action)
+    }
+
 }
