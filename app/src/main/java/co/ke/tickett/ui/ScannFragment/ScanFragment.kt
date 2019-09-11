@@ -12,7 +12,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import co.ke.tickett.R
 import co.ke.tickett.ScanViewModel
+import co.ke.tickett.data.db.entity.User
 import co.ke.tickett.databinding.ScanFragmentBinding
+import co.ke.tickett.ui.login.AuthListener
+import co.ke.tickett.utils.hide
 import co.ke.tickett.utils.toast
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.scan_fragment.*
@@ -21,7 +24,7 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 
-class ScanFragment : Fragment() , KodeinAware,ScanListener {
+class ScanFragment : Fragment() , KodeinAware,AuthListener {
 
 
     override val kodein by kodein()
@@ -68,7 +71,16 @@ class ScanFragment : Fragment() , KodeinAware,ScanListener {
     }
 
 
-    override fun onScanned(message: String) {
+
+    override fun onStarted() {
+
+    }
+
+    override fun onSuccess(user: User) {
+    }
+
+    override fun onFailure(message: String) {
         context?.toast(message)
     }
+
 }

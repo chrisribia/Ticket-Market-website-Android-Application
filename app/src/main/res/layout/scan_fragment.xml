@@ -89,6 +89,7 @@
                     <TextView
                             android:textColor="@android:color/white"
                             android:layout_width="wrap_content"
+                            android:id="@+id/statez"
                             android:text="@{viewmodel.currentTickets.attended}"
                             android:layout_marginBottom="5dp"
                             android:layout_height="match_parent" />
@@ -134,6 +135,7 @@
                     android:text="Confirm"
                     android:onClick="@{viewmodel::confirmTicket}"
                     android:textAllCaps="false"
+                    android:id="@+id/btnCon"
                     android:textColor="@color/cardview_dark_background"
                     android:backgroundTint="@color/cardview_light_background"
                     android:layout_height="wrap_content" />
