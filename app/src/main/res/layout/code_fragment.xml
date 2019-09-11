@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".ui.ScannFragment.ScanFragment"
-        >
-<data>
-    <variable
-            name="viewmodel"
-            type="co.ke.tickett.ScanViewModel" />
-</data>
+        tools:context=".ui.CodeFragment.CodeFragment">
+
+    <data>
+        <variable
+                name="viewmodel"
+                type="co.ke.tickett.CodeViewModel" />
+    </data>
     <RelativeLayout
             android:layout_width="match_parent"
             android:background="@color/colorAccent"
             android:layout_height="match_parent"
-
             android:padding="8dp">
+
+        <LinearLayout
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_search_black_24dp"
+                    android:layout_height="20dp"/>
+            <EditText
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:hint="Enter Ticket Code Here?..."
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
         <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:layout_marginTop="80dp"
                 android:layout_height="wrap_content">
-<ImageView
-        android:layout_marginTop="70dp"
-        android:layout_width="50dp"
-        android:src="@drawable/qr"
-        android:scaleType="centerCrop"
-         android:onClick="@{viewmodel::toQrScanner}"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@null"
-        android:layout_height="50dp"/>
+
 
             <TextView
                     android:layout_width="wrap_content"
@@ -45,21 +60,21 @@
                     android:padding="5dp"
                     android:layout_height="match_parent">
                 <TableRow>
-                <TextView
-                        android:textColor="@android:color/white"
-                        android:layout_width="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:textStyle="bold"
-                        android:layout_height="match_parent"
-                        android:text="Ticket Type :" />
-                <TextView
-                        android:textColor="@android:color/white"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@{viewmodel.currentTickets.ticket_type}"
-                        android:layout_marginBottom="5dp" />
-            </TableRow>
+                    <TextView
+                            android:textColor="@android:color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textStyle="bold"
+                            android:layout_height="match_parent"
+                            android:text="Ticket Type :" />
+                    <TextView
+                            android:textColor="@android:color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+
+                            android:layout_marginBottom="5dp" />
+                </TableRow>
                 <TableRow>
                     <TextView
                             android:textColor="@android:color/white"
@@ -73,7 +88,6 @@
                             android:textColor="@android:color/white"
                             android:layout_width="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:text="@{viewmodel.currentTickets.no_of_tickets.toString()}"
                             android:layout_height="match_parent"
                             />
                 </TableRow>
@@ -90,7 +104,7 @@
                             android:textColor="@android:color/white"
                             android:layout_width="wrap_content"
                             android:id="@+id/statez"
-                            android:text="@{viewmodel.currentTickets.attended}"
+
                             android:layout_marginBottom="5dp"
                             android:layout_height="match_parent" />
                 </TableRow>
@@ -108,7 +122,7 @@
                             android:layout_width="wrap_content"
                             android:layout_marginBottom="5dp"
                             android:layout_height="match_parent"
-                            android:text="@{viewmodel.currentTickets.event_name}" />
+                             />
                 </TableRow>
                 <TableRow>
                     <TextView
@@ -123,7 +137,7 @@
                             android:textColor="@android:color/white"
                             android:layout_width="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:text="@{viewmodel.currentTickets.ticket_price}"
+
                             android:layout_height="wrap_content" />
                 </TableRow>
 
@@ -133,7 +147,7 @@
             <Button
                     android:layout_width="wrap_content"
                     android:text="Confirm"
-                    android:onClick="@{viewmodel::confirmTicket}"
+
                     android:textAllCaps="false"
                     android:id="@+id/btnCon"
                     android:textColor="@color/cardview_dark_background"
@@ -142,5 +156,4 @@
         </LinearLayout>
 
     </RelativeLayout>
-
 </layout>

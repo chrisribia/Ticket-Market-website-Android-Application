@@ -48,7 +48,7 @@ interface MyApi {
 
             return Retrofit.Builder()
                 .client(okkHttpclient)
-                .baseUrl("http://192.168.0.28/android/v1/")
+                .baseUrl("https://www.ticketmarket.co.ke/Android/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(MyApi::class.java)
