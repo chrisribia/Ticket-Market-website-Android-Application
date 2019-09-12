@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
 
-        android:padding="30dp"
+<layout
+        android:padding="10dp"
         xmlns:android="http://schemas.android.com/apk/res/android"
+
+        >
+    
+    <data>
+        <variable
+                name="summery"
+                type="co.ke.tickett.data.db.entity.Summery" />
+    </data>
+<LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:text="Event Name"
-            android:layout_marginTop="30dp"
-            android:layout_height="wrap_content"/>
+
+
     <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -19,15 +25,42 @@
 
             <TextView
                     android:layout_width="match_parent"
-                    android:text="UnConformed Tickets :"
-                    android:layout_marginTop="30dp"
+                    android:text="Event Name    :  "
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"/>
 
 
             <TextView
                     android:layout_width="match_parent"
-                    android:text="00"
-                    android:layout_marginTop="30dp"
+                    android:text="@{summery.event_name}"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"
+                    android:textFontWeight="20"
+                    android:layout_height="wrap_content"/>
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TableRow>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:text="UnConformed Tickets   :  "
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content"/>
+
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:text="@{summery.unconfirmed_tickets.toString()}"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"
+                    android:textFontWeight="20"
                     android:layout_height="wrap_content"/>
         </TableRow>
     </TableLayout>
@@ -40,22 +73,28 @@
 
             <TextView
                     android:layout_width="match_parent"
-                    android:text="Conformed Tickets :"
-                    android:layout_marginTop="30dp"
+                    android:text="Conformed Tickets   :  "
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"/>
 
 
             <TextView
                     android:layout_width="match_parent"
-                    android:text="00"
-                    android:layout_marginTop="30dp"
+                    android:textStyle="bold"
+                    android:textFontWeight="20"
+                    android:text="@{summery.confirmed_tickets.toString()}"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"/>
         </TableRow>
     </TableLayout>
     <TextView
             android:layout_width="match_parent"
-            android:backgroundTint="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:background="@android:color/white"
             android:layout_height="1dp"/>
 
 
 </LinearLayout>
+</layout>

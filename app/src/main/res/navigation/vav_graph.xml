@@ -21,7 +21,7 @@
     <fragment
             android:id="@+id/statsFragment"
             android:name="co.ke.tickett.ui.StatFragment.StatsFragment"
-            android:label="No: of Uncormed Tickets"
+            android:label="Tickets Status"
             tools:layout="@layout/stats_fragment" />
     <fragment
             android:id="@+id/homeFragment"
