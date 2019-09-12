@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ticket Market</string>
+    <string name="sell_tickets">sell tickets</string>
+    <string name="tickets_balance">tickets balance</string>
 </resources>

@@ -17,7 +17,7 @@
         <item
                 android:id="@+id/sellFragment"
                 android:icon="@drawable/ic_attach_money"
-                android:title="tickets balance"
+                android:title="Tickets"
                 />
 
         <item
