@@ -14,11 +14,7 @@ interface SellDao  {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveAllEvents(event : List<Sell>)
 
+    @Query("SELECT * FROM Sell ")
+    fun tickes(): LiveData<List<Sell>>
 
-    @Query("SELECT * FROM Events WHERE qr_code = :qr_code")
-    fun findEvent(qr_code: String): LiveData<Sell>
-
-
-    @Query("SELECT * FROM Events WHERE ticket_code = :ticket_code")
-    fun findEventByCode(ticket_code: String): LiveData<Sell>
 }
