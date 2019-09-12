@@ -27,6 +27,9 @@ interface MyApi {
     @GET("qr_codes.php")
     suspend fun getEvents() : Response<EventsResponse>
 
+    @GET("qr_codes.php")
+    suspend fun getBalances() : Response<BalanceResponse>
+
 
 
     @FormUrlEncoded
