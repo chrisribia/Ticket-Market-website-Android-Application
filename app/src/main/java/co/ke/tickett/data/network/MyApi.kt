@@ -28,6 +28,10 @@ interface MyApi {
     suspend fun getEvents() : Response<EventsResponse>
 
 
+    @GET("eventNames.php")
+    suspend fun getSummery() : Response<BalanceResponse>
+
+
     @FormUrlEncoded
     @POST("confirm.php")
 
