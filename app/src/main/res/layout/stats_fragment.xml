@@ -1,39 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+
+
+<FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        >
-    <data>
-        <variable
-                name="viewmodel"
-                type="co.ke.tickett.StatsViewModel" />
-    </data>
-<FrameLayout
         android:layout_width="match_parent"
         android:background="@color/colorAccent"
         android:layout_height="match_parent"
         android:padding="30dp"
         android:layout_gravity="center"
         tools:context=".ui.StatFragment.StatsFragment">
-
-    <TableLayout
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            tools:listitem="@layout/eventdetailsitem"
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="match_parent">
-        <TableRow>
-            <TextView
+            android:layout_height="match_parent"/>
 
-                    android:textColor="@android:color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:layout_height="match_parent"
-                    android:text="Unconfirmed Tickets :" />
 
-        </TableRow>
-    </TableLayout>
 
 </FrameLayout>
-</layout>
