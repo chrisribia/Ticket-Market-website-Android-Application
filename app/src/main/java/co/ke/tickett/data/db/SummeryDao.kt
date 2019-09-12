@@ -15,7 +15,7 @@ interface SummeryDao {
 
 
     @Query("SELECT * FROM Summery ")
-    fun summery(qr_code: String): LiveData<Summery>
+    fun summery(): LiveData<Summery>
 
 
 
