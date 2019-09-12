@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Stats(
     @PrimaryKey(autoGenerate = false)
-    val id: Int?,
-    val balance : Int?
+    val unconfirmed_tickets: String?,
+    val confirmed_tickets : Int?,
+    val event_name : String?
 )
