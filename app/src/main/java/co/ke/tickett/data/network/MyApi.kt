@@ -43,7 +43,6 @@ interface MyApi {
             val okkHttpclient = OkHttpClient.Builder()
                 .addInterceptor(networkConnectionInterceptor)
                 .build()
-
             return Retrofit.Builder()
                 .client(okkHttpclient)
                 .baseUrl("http://192.168.0.28/android/v1/")

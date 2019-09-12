@@ -9,7 +9,4 @@ class ProfileViewModel(
 
     val user = repository.getUser()
 
-
-
-
 }

@@ -30,6 +30,7 @@
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold"
+
                     android:textColor="@android:color/white"
                     android:layout_width="match_parent"
                     android:hint="Enter Ticket Code Here?..."
