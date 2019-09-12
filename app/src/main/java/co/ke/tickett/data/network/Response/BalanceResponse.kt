@@ -1,6 +1,8 @@
 package co.ke.tickett.data.network.Response
 
-data class BalanceResponse (
-    var error : Boolean?
+import co.ke.tickett.data.db.entity.Summery
 
+data class BalanceResponse (
+    var error : Boolean?,
+    var Events : List<Summery>
 )
