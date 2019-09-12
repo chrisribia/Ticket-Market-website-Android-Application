@@ -5,12 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import co.ke.tickett.data.db.entity.Events
+import co.ke.tickett.data.db.entity.Sell
 import co.ke.tickett.data.db.entity.Summery
 import co.ke.tickett.data.db.entity.User
 
 
 @Database(
-    entities = [User::class,Events::class, Summery::class],
+    entities = [User::class,Events::class, Summery::class, Sell::class],
     version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -18,6 +19,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun getUserDao(): UserDao
     abstract fun getEventsDao() : EventsDao
     abstract fun getSummeryDao() : SummeryDao
+    abstract fun getSellDao() : SellDao
 
 
     companion object {
