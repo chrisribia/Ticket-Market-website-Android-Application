@@ -11,11 +11,11 @@ import co.ke.tickett.data.db.entity.Summery
 interface SummeryDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun saveAllEvents(quotes : List<Summery>)
+    fun saveAllSummery(summery : List<Summery>)
 
 
     @Query("SELECT * FROM Summery ")
-    fun summery(): LiveData<Summery>
+    fun summery(): LiveData<List<Summery>>
 
 
 
