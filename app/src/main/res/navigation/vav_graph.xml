@@ -46,7 +46,7 @@
     </fragment>
     <fragment
             android:id="@+id/sellFragment"
-            android:name="co.ke.tickett.ui.SellFragment"
-            android:label="sell_fragment"
+            android:name="co.ke.tickett.ui.SellFragment.SellFragment"
+            android:label="Tickets Menu"
             tools:layout="@layout/sell_fragment" />
 </navigation>

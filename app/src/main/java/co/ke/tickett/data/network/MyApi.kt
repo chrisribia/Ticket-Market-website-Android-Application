@@ -1,9 +1,7 @@
 package co.ke.tickett.data.network
 
-import co.ke.tickett.data.network.Response.AuthResponse
-import co.ke.tickett.data.network.Response.BalanceResponse
-import co.ke.tickett.data.network.Response.ConfirmResponse
-import co.ke.tickett.data.network.Response.EventsResponse
+import co.ke.tickett.data.db.entity.Sell
+import co.ke.tickett.data.network.Response.*
 import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -31,10 +29,12 @@ interface MyApi {
     @GET("eventNames.php")
     suspend fun getSummery() : Response<BalanceResponse>
 
+    @GET("getTicketTypesForSale.php")
+    suspend fun getSell() : Response<SellResponse>
+
 
     @FormUrlEncoded
     @POST("confirm.php")
-
     suspend fun confirmTicket(
     @Field("qr_code")
     qr_code : String )  : Response<ConfirmResponse>
