@@ -27,16 +27,13 @@ interface MyApi {
     @GET("qr_codes.php")
     suspend fun getEvents() : Response<EventsResponse>
 
-    @GET("qr_codes.php")
-    suspend fun getBalances() : Response<BalanceResponse>
-
-
 
     @FormUrlEncoded
     @POST("confirm.php")
+
     suspend fun confirmTicket(
-        @Field("qr_code")
-        qr_code : String )  : Response<ConfirmResponse>
+    @Field("qr_code")
+    qr_code : String )  : Response<ConfirmResponse>
 
     companion object{
         operator fun invoke(
