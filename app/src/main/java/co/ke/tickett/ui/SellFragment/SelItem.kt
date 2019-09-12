@@ -12,8 +12,8 @@ class SelItem(private val sell : Sell) : BindableItem<SellitemBinding>() {
     override fun bind(viewBinding: SellitemBinding, position: Int) {
         viewBinding.setSell(sell)
 
-        viewBinding.root.setOnClickListener {
-     val action = SellFragmentDirections.actionSellFragmentToFinalFragment()
+            viewBinding.root.setOnClickListener {
+            val action = SellFragmentDirections.actionSellFragmentToFinalFragment()
             Navigation.findNavController(it).navigate(action)
 
         }

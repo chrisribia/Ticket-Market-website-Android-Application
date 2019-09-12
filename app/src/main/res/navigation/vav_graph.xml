@@ -52,6 +52,9 @@
         <action
                 android:id="@+id/action_sellFragment_to_finalFragment"
                 app:destination="@id/finalFragment" />
+        <argument android:name="Sell"
+                app:argType="co.ke.tickett.data.db.entity.Sell"
+                />
     </fragment>
     <fragment
             android:id="@+id/finalFragment"
