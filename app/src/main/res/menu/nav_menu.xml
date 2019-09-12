@@ -15,6 +15,12 @@
                 />
 
         <item
+                android:id="@+id/sellFragment"
+                android:icon="@drawable/ic_attach_money"
+                android:title="tickets balance"
+                />
+
+        <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_account"
         android:title="User Profile"
