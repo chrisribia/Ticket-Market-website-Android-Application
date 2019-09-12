@@ -4,8 +4,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Stats(
+data class Summery(
     @PrimaryKey(autoGenerate = false)
-    val id: Int?,
-    val balance : Int?
+    val event_name: String,
+    val confirmed_tickets : Int?,
+    val unconfirmed_tickets : Int?
 )

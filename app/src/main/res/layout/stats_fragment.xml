@@ -31,16 +31,7 @@
                     android:textStyle="bold"
                     android:layout_height="match_parent"
                     android:text="Unconfirmed Tickets :" />
-            <TextView
 
-                    android:layout_width="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:layout_height="match_parent"
-                    android:text="@{viewmodel.currentBalance.balance.toString()}" />
         </TableRow>
     </TableLayout>
 

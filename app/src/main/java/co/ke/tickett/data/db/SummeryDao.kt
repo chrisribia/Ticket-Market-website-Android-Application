@@ -5,15 +5,19 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import co.ke.tickett.data.db.entity.Stats
+import co.ke.tickett.data.db.entity.Summery
 
-private val Id = 1
 @Dao
-interface StatsDao{
+interface SummeryDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveBalance(stats: List<Stats>)
+    fun saveAllEvents(quotes : List<Summery>)
 
-    @Query("SELECT * FROM Stats WHERE id=ID")
-    fun getbalance() : LiveData<Stats>
+
+    @Query("SELECT * FROM Summery ")
+    fun summery(): LiveData<Summery>
+
+
+
+
 }

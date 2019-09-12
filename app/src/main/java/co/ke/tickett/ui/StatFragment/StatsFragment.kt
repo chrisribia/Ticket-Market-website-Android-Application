@@ -30,7 +30,6 @@ class StatsFragment : Fragment() , KodeinAware {
         viewModel = ViewModelProviders.of(this, factory).get(StatsViewModel::class.java)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
-        viewModel.findEmployee()
 
         return binding.root
     }

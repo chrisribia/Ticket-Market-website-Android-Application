@@ -28,14 +28,16 @@ interface MyApi {
     suspend fun getEvents() : Response<EventsResponse>
 
 
-    @GET("unconfirmedTickets.php")
-    suspend fun getBalance() : Response<BalanceResponse>
+    @GET("eventNames.php")
+    suspend fun getSummery() : Response<BalanceResponse>
+
 
     @FormUrlEncoded
     @POST("confirm.php")
+
     suspend fun confirmTicket(
-        @Field("qr_code")
-        qr_code : String )  : Response<ConfirmResponse>
+    @Field("qr_code")
+    qr_code : String )  : Response<ConfirmResponse>
 
     companion object{
         operator fun invoke(
@@ -45,10 +47,9 @@ interface MyApi {
             val okkHttpclient = OkHttpClient.Builder()
                 .addInterceptor(networkConnectionInterceptor)
                 .build()
-
             return Retrofit.Builder()
                 .client(okkHttpclient)
-                .baseUrl("https://www.ticketmarket.co.ke/Android/v1/")
+                .baseUrl("http://192.168.0.28/android/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(MyApi::class.java)
