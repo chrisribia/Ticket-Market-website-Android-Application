@@ -1,5 +1,6 @@
 package co.ke.tickett.data.network
 
+import co.ke.tickett.data.db.entity.Sell
 import co.ke.tickett.data.network.Response.AuthResponse
 import co.ke.tickett.data.network.Response.BalanceResponse
 import co.ke.tickett.data.network.Response.ConfirmResponse
@@ -31,10 +32,12 @@ interface MyApi {
     @GET("eventNames.php")
     suspend fun getSummery() : Response<BalanceResponse>
 
+    @GET("getTicketTypesForSale.php")
+    suspend fun getSell() : Response<Sell>
+
 
     @FormUrlEncoded
     @POST("confirm.php")
-
     suspend fun confirmTicket(
     @Field("qr_code")
     qr_code : String )  : Response<ConfirmResponse>
