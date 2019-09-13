@@ -2,6 +2,7 @@ package co.ke.tickett.data.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
 data class Sell(
@@ -11,4 +12,4 @@ data class Sell(
     val ticket_type: String?,
     val available_tickets : Int?,
     val ticket_price : String?
-)
+):Serializable

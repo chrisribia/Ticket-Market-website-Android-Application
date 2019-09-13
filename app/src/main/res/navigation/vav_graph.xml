@@ -48,5 +48,23 @@
             android:id="@+id/sellFragment"
             android:name="co.ke.tickett.ui.SellFragment.SellFragment"
             android:label="Tickets Menu"
-            tools:layout="@layout/sell_fragment" />
+            tools:layout="@layout/sell_fragment" >
+        <action
+                android:id="@+id/action_sellFragment_to_finalFragment"
+                app:destination="@id/finalFragment" />
+
+    </fragment>
+    <fragment
+            android:id="@+id/finalFragment"
+            android:name="co.ke.tickett.ui.SellDetailsFragment.FinalFragment"
+            android:label="Make Sales"
+            tools:layout="@layout/final_fragment">
+        <action
+                android:id="@+id/action_finalFragment_to_sellFragment"
+                app:destination="@id/sellFragment" />
+
+        <argument android:name="Sell"
+                app:argType="co.ke.tickett.data.db.entity.Sell"
+                />
+    </fragment>
 </navigation>

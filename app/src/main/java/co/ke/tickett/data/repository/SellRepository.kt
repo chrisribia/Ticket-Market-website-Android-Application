@@ -10,6 +10,7 @@ import co.ke.tickett.data.network.SafeApiRequest
 import co.ke.tickett.utils.Coroutines
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 class SellRepository(private val api: MyApi,
                      private val db: AppDatabase
@@ -33,9 +34,12 @@ class SellRepository(private val api: MyApi,
     }
 
     private suspend fun fetchQuotes() {
-
+try{
         val response = apiRequest { api.getSell() }
-        balances.postValue(response.Tickets)
+        balances.postValue(response.Tickets)}
+catch (e:Exception){
+    e.printStackTrace()
+}
 
     }
 
@@ -47,5 +51,6 @@ class SellRepository(private val api: MyApi,
         }
     }
 
+    fun getDetailsForSale(id : String) = db.getSellDao().ticketForSale(id)
 
 }
