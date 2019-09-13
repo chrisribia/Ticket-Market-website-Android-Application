@@ -50,7 +50,7 @@ class FinalViewModel(private val repository : SellRepository)
             email.isNullOrEmpty() ||
             code.isNullOrEmpty()
         ) {
-
+            
             authListener?.onFailure("please fill all details !!")
             return
         }
