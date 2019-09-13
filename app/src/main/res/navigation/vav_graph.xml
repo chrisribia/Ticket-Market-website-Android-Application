@@ -59,7 +59,7 @@
     <fragment
             android:id="@+id/finalFragment"
             android:name="co.ke.tickett.ui.SellDetailsFragment.FinalFragment"
-            android:label="Sales "
+            android:label="Make Sales"
             tools:layout="@layout/final_fragment">
         <action
                 android:id="@+id/action_finalFragment_to_sellFragment"

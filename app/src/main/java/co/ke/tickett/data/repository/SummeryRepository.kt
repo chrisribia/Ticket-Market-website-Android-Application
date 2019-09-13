@@ -31,11 +31,14 @@ class SummeryRepository(private val api: MyApi,
     }
 
     private suspend fun fetchQuotes() {
+try {
 
-            val response = apiRequest { api.getSummery() }
-            balances.postValue(response.Events)
+    val response = apiRequest { api.getSummery() }
+    balances.postValue(response.Events)
 
-    }
+}catch (e:Exception) {
+    e.printStackTrace()
+}}
 
 
 
