@@ -13,7 +13,7 @@ class SelItem(private val sell : Sell) : BindableItem<SellitemBinding>() {
         viewBinding.setSell(sell)
 
             viewBinding.root.setOnClickListener {
-            val action = SellFragmentDirections.actionSellFragmentToFinalFragment()
+            val action = SellFragmentDirections.actionSellFragmentToFinalFragment(sell)
             Navigation.findNavController(it).navigate(action)
 
         }

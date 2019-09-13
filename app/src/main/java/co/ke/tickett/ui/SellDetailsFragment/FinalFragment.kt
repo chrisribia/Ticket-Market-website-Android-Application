@@ -28,6 +28,10 @@ class FinalFragment : Fragment(), KodeinAware {
         viewModel = ViewModelProviders.of(this,factory).get(FinalViewModel::class.java)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
+
+        arguments?.let {
+
+        }
         return binding.root
 
     }
