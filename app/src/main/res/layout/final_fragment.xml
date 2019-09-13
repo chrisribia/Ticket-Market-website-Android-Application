@@ -34,7 +34,7 @@
 
                 <TextView
                         android:layout_width="match_parent"
-                        android:text="@{viewmodel.currentEmployee.event_name}"
+                        android:text="@{viewmodel.event_name}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
@@ -53,7 +53,8 @@
 
                 <TextView
                         android:layout_width="match_parent"
-                        android:text="@{viewmodel.currentEmployee.ticket_type}"
+                        android:id="@+id/type"
+                        android:text="@{viewmodel.event_type}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
@@ -64,42 +65,54 @@
 
                 <TextView
                         android:layout_width="match_parent"
-                        android:text="Tickets Price  :  "
+                        android:text="Phone No :"
                         android:textColor="@android:color/white"
                         android:layout_marginTop="5dp"
                         android:layout_height="wrap_content"/>
 
 
-                <TextView
+                <EditText
                         android:layout_width="match_parent"
-                        android:text="@{viewmodel.currentEmployee.ticket_price}"
+                        android:hint="Enter Phone Number please"
+                        android:text="@={viewmodel.phone}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
                         android:textFontWeight="20"
                         android:layout_height="wrap_content"/>
             </TableRow>
+
             <TableRow>
 
                 <TextView
                         android:layout_width="match_parent"
-                        android:text="Available Tickets   :  "
+                        android:text="Email Adress :"
                         android:textColor="@android:color/white"
                         android:layout_marginTop="5dp"
                         android:layout_height="wrap_content"/>
 
 
-                <TextView
+                <EditText
                         android:layout_width="match_parent"
-                        android:text="@{viewmodel.currentEmployee.available_tickets.toString()}"
+                        android:hint="Enter Email Address please"
+                        android:text="@={viewmodel.email}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
                         android:textFontWeight="20"
                         android:layout_height="wrap_content"/>
             </TableRow>
+
 
         </TableLayout>
+
+        <Button
+                android:textAllCaps="false"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:text="Sell"
+                android:onClick="@{viewmodel::mToast}"
+                android:layout_height="wrap_content"/>
 
         <TextView
                 android:layout_width="match_parent"

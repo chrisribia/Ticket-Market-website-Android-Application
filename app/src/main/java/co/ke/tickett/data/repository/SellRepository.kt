@@ -6,6 +6,7 @@ import co.ke.tickett.data.db.AppDatabase
 import co.ke.tickett.data.db.entity.Sell
 import co.ke.tickett.data.db.entity.Summery
 import co.ke.tickett.data.network.MyApi
+import co.ke.tickett.data.network.Response.AuthResponse
 import co.ke.tickett.data.network.SafeApiRequest
 import co.ke.tickett.utils.Coroutines
 import kotlinx.coroutines.Dispatchers
@@ -52,5 +53,18 @@ catch (e:Exception){
     }
 
     fun getDetailsForSale(id : String) = db.getSellDao().ticketForSale(id)
+
+
+
+    suspend fun makeSales(
+        event: String,
+        ticket_type: String,
+        phone: String,
+        email: String,
+        code: String
+
+    ) : AuthResponse {
+        return apiRequest{ api.ticketSale(event,ticket_type,phone, email, code)}
+    }
 
 }
