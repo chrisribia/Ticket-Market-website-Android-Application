@@ -38,7 +38,11 @@ class FinalFragment : Fragment(), KodeinAware {
         }
             sell?.let {
                 viewModel.findEmployee(it.id.toString())
+
             }
+        viewModel.event_name=sell!!.event_name
+        viewModel.event_type=sell!!.ticket_type
+        viewModel
         return binding.root
     }
 }
