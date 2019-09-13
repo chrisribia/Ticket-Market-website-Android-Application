@@ -99,7 +99,58 @@
                         android:layout_height="wrap_content"/>
             </TableRow>
 
+
+            <TableRow>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:text="Phone No :"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"/>
+
+
+                <EditText
+                        android:layout_width="match_parent"
+                        android:hint="Enter Phone Number please"
+                        android:text=" "
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textFontWeight="20"
+                        android:layout_height="wrap_content"/>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:text="Email Adress :"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"/>
+
+
+                <EditText
+                        android:layout_width="match_parent"
+                        android:hint="Enter Email Number please"
+                        android:text=" "
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textFontWeight="20"
+                        android:layout_height="wrap_content"/>
+            </TableRow>
+
+
         </TableLayout>
+
+        <Button
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:text="Sell"
+
+                android:layout_height="wrap_content"/>
 
         <TextView
                 android:layout_width="match_parent"
