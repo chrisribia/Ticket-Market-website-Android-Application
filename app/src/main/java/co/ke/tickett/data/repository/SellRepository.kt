@@ -51,5 +51,6 @@ catch (e:Exception){
         }
     }
 
+    fun getDetailsForSale(id : String) = db.getSellDao().ticketForSale(id)
 
 }
