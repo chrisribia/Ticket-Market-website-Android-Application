@@ -11,12 +11,16 @@ import co.ke.tickett.FinalViewModel
 
 import co.ke.tickett.R
 import co.ke.tickett.data.db.entity.Sell
+import co.ke.tickett.data.db.entity.User
 import co.ke.tickett.databinding.FinalFragmentBinding
+import co.ke.tickett.ui.login.AuthListener
+import co.ke.tickett.utils.toast
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 
-class FinalFragment : Fragment(), KodeinAware {
+class FinalFragment : Fragment(), KodeinAware,AuthListener {
+
     override val kodein by kodein()
     private lateinit var viewModel: FinalViewModel
     private val factory: FinalViewModelFactory by instance()
@@ -45,4 +49,17 @@ class FinalFragment : Fragment(), KodeinAware {
         viewModel
         return binding.root
     }
+
+    override fun onStarted() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onSuccess(user: User) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onFailure(message: String) {
+         context?.toast("jdgi")
+    }
+
 }

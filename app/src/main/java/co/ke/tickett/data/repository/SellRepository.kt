@@ -56,7 +56,7 @@ catch (e:Exception){
 
 
 
-    suspend fun userSignup(
+    suspend fun makeSales(
         event: String,
         ticket_type: String,
         phone: String,
