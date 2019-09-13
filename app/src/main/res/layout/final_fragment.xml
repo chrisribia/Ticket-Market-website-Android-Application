@@ -74,7 +74,7 @@
                 <EditText
                         android:layout_width="match_parent"
                         android:hint="Enter Phone Number please"
-                        android:text="@{viewmodel.phone}"
+                        android:text="@={viewmodel.phone}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
@@ -95,7 +95,7 @@
                 <EditText
                         android:layout_width="match_parent"
                         android:hint="Enter Email Number please"
-                        android:text=" "
+                        android:text="@={viewmodel.email}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
@@ -107,6 +107,7 @@
         </TableLayout>
 
         <Button
+                android:textAllCaps="false"
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
                 android:text="Sell"
