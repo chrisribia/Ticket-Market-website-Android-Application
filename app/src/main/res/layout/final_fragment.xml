@@ -34,7 +34,7 @@
 
                 <TextView
                         android:layout_width="match_parent"
-                        android:text="XXXX"
+                        android:text="@{viewmodel.currentEmployee.event_name}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
@@ -53,7 +53,7 @@
 
                 <TextView
                         android:layout_width="match_parent"
-                        android:text="XXXX"
+                        android:text="@{viewmodel.currentEmployee.ticket_type}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
@@ -72,7 +72,7 @@
 
                 <TextView
                         android:layout_width="match_parent"
-                        android:text="XXX"
+                        android:text="@{viewmodel.currentEmployee.ticket_price}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
@@ -91,7 +91,7 @@
 
                 <TextView
                         android:layout_width="match_parent"
-                        android:text="XXXX"
+                        android:text="@{viewmodel.currentEmployee.available_tickets.toString()}"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"

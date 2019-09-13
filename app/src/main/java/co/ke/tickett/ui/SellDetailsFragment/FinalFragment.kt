@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import co.ke.tickett.FinalViewModel
 
 import co.ke.tickett.R
+import co.ke.tickett.data.db.entity.Sell
 import co.ke.tickett.databinding.FinalFragmentBinding
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
@@ -19,6 +20,7 @@ class FinalFragment : Fragment(), KodeinAware {
     override val kodein by kodein()
     private lateinit var viewModel: FinalViewModel
     private val factory: FinalViewModelFactory by instance()
+    var sell : Sell? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,12 +33,12 @@ class FinalFragment : Fragment(), KodeinAware {
 
         arguments?.let {
             val args = FinalFragmentArgs.fromBundle(it)
+            sell = args.sell
 
         }
+            sell?.let {
+                viewModel.findEmployee(it.id.toString())
+            }
         return binding.root
-
     }
-
-
-
 }
