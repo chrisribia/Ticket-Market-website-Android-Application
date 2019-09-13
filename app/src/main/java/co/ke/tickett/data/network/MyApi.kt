@@ -39,6 +39,18 @@ interface MyApi {
     @Field("qr_code")
     qr_code : String )  : Response<ConfirmResponse>
 
+
+    @FormUrlEncoded
+    @POST("ticketSale.php")
+    suspend fun ticketSale(
+        @Field("event") event: String,
+        @Field("ticket_type") ticket_type: String,
+        @Field("phone") phone: String,
+        @Field("email") email: String,
+        @Field("code") code: String
+    ) : Response<AuthResponse>
+
+
     companion object{
         operator fun invoke(
             networkConnectionInterceptor: NetworkConnectionInterceptor
