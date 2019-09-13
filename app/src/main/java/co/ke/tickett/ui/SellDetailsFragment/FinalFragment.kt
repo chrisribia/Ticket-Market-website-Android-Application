@@ -30,6 +30,7 @@ class FinalFragment : Fragment(), KodeinAware {
         binding.lifecycleOwner = this
 
         arguments?.let {
+            val args = FinalFragmentArgs.fromBundle(it)
 
         }
         return binding.root

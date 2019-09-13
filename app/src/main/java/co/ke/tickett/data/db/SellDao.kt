@@ -17,4 +17,9 @@ interface SellDao  {
     @Query("SELECT * FROM Sell ")
     fun tickes(): LiveData<List<Sell>>
 
+    @Query("SELECT * FROM Sell WHERE id=:id ")
+    fun ticketForSale(id: String): LiveData<List<Sell>>
+
+
+
 }
