@@ -40,6 +40,7 @@ class CodeConfirmFragment : Fragment(),KodeinAware {
 
         eventz?.let {
         viewModel.findEmployee(it.ticket_code!!)
+            viewModel.ticket_code = it.ticket_code
         }
         return  binding.root
     }

@@ -35,10 +35,18 @@ class EventsRespository(private val api: MyApi,
     }
 
     fun findEvent(qr: String) = db.getEventsDao().findEvent(qr)
+
+
     suspend fun confirmTicket(qr_code : String)  : ConfirmResponse{
 
         return apiRequest {  api.confirmTicket(qr_code)}
     }
+
+    suspend fun confirmTicketCode(Ticket_code : String)  : ConfirmResponse{
+
+        return apiRequest {  api.confirmTicketByCode(Ticket_code)}
+    }
+
 
 
 

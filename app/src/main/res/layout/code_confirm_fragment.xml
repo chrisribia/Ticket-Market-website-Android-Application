@@ -123,6 +123,7 @@
                 android:layout_width="wrap_content"
                 android:text="Confirm"
                 android:textAllCaps="false"
+                android:onClick="@{event::confirmTicket}"
                 android:id="@+id/btnCon"
                 android:textColor="@color/cardview_dark_background"
                 android:backgroundTint="@color/cardview_light_background"
