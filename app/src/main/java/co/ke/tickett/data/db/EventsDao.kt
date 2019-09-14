@@ -17,8 +17,8 @@ interface EventsDao {
     @Query("SELECT * FROM Events WHERE qr_code = :qr_code")
     fun findEvent(qr_code: String): LiveData<Events>
 
-    @Query("SELECT * FROM Events WHERE ticket_code = :qr_code")
-    fun findEventByCodez(qr_code: String): LiveData<Events>
+    @Query("SELECT * FROM Events WHERE ticket_code = :ticket_code")
+    fun findByCodez(ticket_code: String): LiveData<Events>
 
 
 

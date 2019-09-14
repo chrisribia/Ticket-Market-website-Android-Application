@@ -31,6 +31,7 @@
             <TextView
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
+                    android:text="@{event.currentTickets.ticket_code}"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="5dp" />
         </TableRow>
@@ -46,6 +47,7 @@
             <TextView
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
+                    android:text="hjdf"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="5dp" />
         </TableRow>

@@ -46,6 +46,6 @@ class EventsRespository(private val api: MyApi,
 
     fun findEventBycode(query: String) = db.getEventsDao().findEventByCode(query)
 
-    fun findEventBycodez(query: String) = db.getEventsDao().findEventByCodez(query)
+    fun findEventBycodez(query: String) = db.getEventsDao().findByCodez(query)
 
 }

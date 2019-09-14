@@ -31,13 +31,15 @@ class CodeConfirmFragment : Fragment(),KodeinAware {
     ): View? {
         val binding : CodeConfirmFragmentBinding =DataBindingUtil.inflate(inflater,R.layout.code_confirm_fragment, container, false)
         viewModel = ViewModelProviders.of(this,factory).get(CodeConfirmViewModel::class.java)
+        binding.event = viewModel
+        binding.lifecycleOwner = this
         arguments?.let {
             val arg = CodeConfirmFragmentArgs.fromBundle(it)
             eventz= arg.event
         }
 
         eventz?.let {
-        viewModel.findEmployee(it.ticket_type!!)
+        viewModel.findEmployee(it.ticket_code!!)
         }
         return  binding.root
     }
