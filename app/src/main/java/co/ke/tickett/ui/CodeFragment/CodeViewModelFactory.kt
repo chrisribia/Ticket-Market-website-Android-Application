@@ -6,7 +6,7 @@ import co.ke.tickett.CodeViewModel
 import co.ke.tickett.data.repository.EventsRespository
 import co.ke.tickett.data.repository.SummeryRepository
 
-class CodeViewModelFactory(private val repository: SummeryRepository):
+class CodeViewModelFactory(private val repository: EventsRespository):
 ViewModelProvider.NewInstanceFactory()
 {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

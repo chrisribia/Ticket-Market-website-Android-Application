@@ -27,7 +27,7 @@
                     android:textAlignment="center"
                     android:textSize="20sp"
                     android:textStyle="bold"
-
+                    android:onTextChanged="@{(text, start, before, count) -> viewmodel.onSearchTextChange(text)}"
                     android:textColor="@android:color/white"
                     android:layout_width="match_parent"
                     android:hint="Enter Ticket Code Here?..."
@@ -36,7 +36,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview"
-                tools:listitem="@layout/layout_event"
+                tools:listitem="@layout/layoutevent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 

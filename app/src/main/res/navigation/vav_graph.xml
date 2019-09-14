@@ -43,6 +43,9 @@
         <action
                 android:id="@+id/action_codeFragment_to_homeFragment"
                 app:destination="@id/homeFragment" />
+        <action
+                android:id="@+id/action_codeFragment_to_codeConfirmFragment"
+                app:destination="@id/codeConfirmFragment" />
     </fragment>
     <fragment
             android:id="@+id/sellFragment"
@@ -65,6 +68,18 @@
 
         <argument android:name="Sell"
                 app:argType="co.ke.tickett.data.db.entity.Sell"
+                />
+    </fragment>
+    <fragment
+            android:id="@+id/codeConfirmFragment"
+            android:name="co.ke.tickett.ui.CodeConfirm.CodeConfirmFragment"
+            android:label="code_confirm_fragment"
+            tools:layout="@layout/code_confirm_fragment" >
+        <action
+                android:id="@+id/action_codeConfirmFragment_to_codeFragment"
+                app:destination="@id/codeFragment" />
+        <argument android:name="event"
+                  app:argType="co.ke.tickett.data.db.entity.Events"
                 />
     </fragment>
 </navigation>

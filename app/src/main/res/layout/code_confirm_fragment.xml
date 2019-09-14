@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+    <data>
+        <variable
+                name="event"
+                type="co.ke.tickett.CodeConfirmViewModel" />
+    </data>
+<FrameLayout    android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        tools:context=".ui.CodeConfirm.CodeConfirmFragment">
+    <TableLayout
+            android:layout_width="match_parent"
+            android:stretchColumns="*"
+            android:padding="5dp"
+            android:layout_height="match_parent">
+
+        <TableRow>
+            <TextView
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:text="Ticket Code :" />
+            <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:text="@{event.currentTickets.ticket_code}"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:text="Ticket Type :" />
+            <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:text="@{event.currentTickets.ticket_type}"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:text="Number of Tickets :" />
+            <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:text="@{event.currentTickets.no_of_tickets.toString()}"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="match_parent"
+                    />
+        </TableRow>
+        <TableRow>
+            <TextView
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:text="Ticket Status :" />
+            <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/statez"
+                    android:text="@{event.currentTickets.attended}"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="match_parent" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:text="Event Name :" />
+            <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@{event.currentTickets.event_name}"
+                    android:layout_height="match_parent"
+                    />
+        </TableRow>
+        <TableRow>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:text="Ticket Price :" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="@{event.currentTickets.ticket_price}"
+                    android:textColor="@android:color/black"
+                    android:layout_height="wrap_content" />
+        </TableRow>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:text="Confirm"
+                android:textAllCaps="false"
+                android:onClick="@{event::confirmTicket}"
+                android:id="@+id/btnCon"
+                android:textColor="@color/cardview_dark_background"
+                android:backgroundTint="@color/cardview_light_background"
+                android:layout_height="wrap_content" />
+
+    </TableLayout>
+
+
+</FrameLayout>
+</layout>

@@ -15,9 +15,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 
 class QrFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = QrFragment()
-    }
+
 lateinit var mView : View
     private lateinit var viewModel: QrViewModel
 

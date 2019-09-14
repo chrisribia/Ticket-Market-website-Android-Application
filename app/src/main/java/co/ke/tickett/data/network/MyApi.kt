@@ -39,6 +39,13 @@ interface MyApi {
     @Field("qr_code")
     qr_code : String )  : Response<ConfirmResponse>
 
+    @FormUrlEncoded
+    @POST("confirmCode.php")
+    suspend fun confirmTicketByCode(
+        @Field("ticket_code")
+        Ticket_code : String )  : Response<ConfirmResponse>
+
+
 
     @FormUrlEncoded
     @POST("ticketSale.php")

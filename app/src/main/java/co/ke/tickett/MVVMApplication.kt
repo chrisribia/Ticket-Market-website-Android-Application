@@ -8,6 +8,7 @@ import co.ke.tickett.data.repository.EventsRespository
 import co.ke.tickett.data.repository.SellRepository
 import co.ke.tickett.data.repository.SummeryRepository
 import co.ke.tickett.data.repository.UserRepository
+import co.ke.tickett.ui.CodeConfirm.CodeConfirmViewModelFactory
 import co.ke.tickett.ui.CodeFragment.CodeViewModelFactory
 import co.ke.tickett.ui.ScannFragment.ScanViewModelFactory
 import co.ke.tickett.ui.SellDetailsFragment.FinalViewModelFactory
@@ -44,6 +45,8 @@ class MVVMApplication : Application(), KodeinAware {
         bind() from provider { CodeViewModelFactory(instance()) }
         bind() from provider { SellViewModelFactory(instance()) }
         bind() from provider { FinalViewModelFactory(instance()) }
+        bind() from provider { CodeConfirmViewModelFactory(instance()) }
+
 
     }
 }
