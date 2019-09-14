@@ -37,7 +37,7 @@ class CodeConfirmFragment : Fragment(),KodeinAware {
         }
 
         eventz?.let {
-
+        viewModel.findEmployee(it.ticket_type!!)
         }
         return  binding.root
     }
