@@ -119,13 +119,14 @@
                     android:layout_height="wrap_content" />
         </TableRow>
 
-        <TextView
-                android:layout_marginTop="3dp"
-                android:textColor="@android:color/white"
+        <Button
                 android:layout_width="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:background="@android:color/white"
-                android:layout_height="1dp" />
+                android:text="Confirm"
+                android:textAllCaps="false"
+                android:id="@+id/btnCon"
+                android:textColor="@color/cardview_dark_background"
+                android:backgroundTint="@color/cardview_light_background"
+                android:layout_height="wrap_content" />
 
     </TableLayout>
 
