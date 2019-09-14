@@ -17,6 +17,23 @@
             android:stretchColumns="*"
             android:padding="5dp"
             android:layout_height="match_parent">
+
+        <TableRow>
+            <TextView
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textStyle="bold"
+                    android:layout_height="match_parent"
+                    android:text="Ticket Code :" />
+            <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@{event.ticket_code}"
+                    android:layout_marginBottom="5dp" />
+        </TableRow>
         <TableRow>
             <TextView
                     android:textColor="@android:color/white"
