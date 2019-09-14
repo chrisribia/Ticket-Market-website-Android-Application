@@ -2,6 +2,7 @@ package co.ke.tickett.data.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
 data class Events(
@@ -14,4 +15,4 @@ data class Events(
     val ticket_type : String?,
     val no_of_tickets : Int?,
     val ticket_price : String?
-)
+): Serializable
