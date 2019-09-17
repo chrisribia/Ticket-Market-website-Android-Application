@@ -49,7 +49,7 @@
 
             <TextView
                     android:layout_width="match_parent"
-                    android:text="UnConformed Tickets   :  "
+                    android:text="Unscanned Tickets   :  "
                     android:textColor="@android:color/white"
                     android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"/>
@@ -74,7 +74,7 @@
 
             <TextView
                     android:layout_width="match_parent"
-                    android:text="Conformed Tickets   :  "
+                    android:text="Scanned Tickets   :  "
                     android:textColor="@android:color/white"
                     android:layout_marginTop="5dp"
                     android:layout_height="wrap_content"/>
