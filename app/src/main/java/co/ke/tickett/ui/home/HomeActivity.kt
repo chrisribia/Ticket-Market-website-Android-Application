@@ -35,22 +35,18 @@ class HomeActivity : AppCompatActivity(), KodeinAware {
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         viewModel = ViewModelProviders.of(this, factory).get(HomeViewModel::class.java)
 
+        val navController = Navigation.findNavController(this,R.id.fragment)
+        NavigationUI.setupWithNavController(nav_view,navController)
 
-        //Getting the Navigation Controller
-        navController = Navigation.findNavController(this, R.id.fragment)
-
-        //Setting the navigation controller to Bottom Nav
-        bottomNav.setupWithNavController(navController)
-
-
-        //Setting up the action bar
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        NavigationUI.setupActionBarWithNavController(this,navController,drawer_layout)
 
     }
 
-    //Setting Up the back button
     override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(navController, null)
+        return NavigationUI.navigateUp(
+            Navigation.findNavController(this,R.id.fragment),
+            drawer_layout
+        )
     }
 
 
