@@ -11,13 +11,13 @@
         <item
                 android:id="@+id/statsFragment"
                 android:icon="@drawable/ic_balance"
-                android:title="tickets balance"
+                android:title="Tickets Analysis"
                 />
 
         <item
                 android:id="@+id/sellFragment"
                 android:icon="@drawable/ic_attach_money"
-                android:title="Tickets"
+                android:title="Sell Tickets"
                 />
 
         <item
