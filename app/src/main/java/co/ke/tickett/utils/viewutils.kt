@@ -18,10 +18,10 @@ fun ProgressBar.hide(){
     visibility = View.GONE
 }
 
-fun Button.show(){
+fun Button.showz(){
     visibility = View.VISIBLE
 }
 
-fun Button.hide(){
+fun Button.hidex(){
     visibility = View.GONE
 }
