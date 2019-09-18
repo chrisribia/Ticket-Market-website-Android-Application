@@ -70,11 +70,6 @@ class CodeConfirmFragment : Fragment(),KodeinAware,AuthListener {
         }
 
 
-        if (viewModel.boo){
-            binding.btnCon.hidex()
-        }else{
-            binding.btnCon.showz()
-        }
 
         return  binding.root
     }

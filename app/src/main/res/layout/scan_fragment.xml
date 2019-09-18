@@ -89,6 +89,7 @@
                     <TextView
                             android:textColor="@android:color/white"
                             android:layout_width="wrap_content"
+                            android:textSize="25dp"
                             android:id="@+id/statez"
                             android:text="@{viewmodel.currentTickets.attended}"
                             android:layout_marginBottom="5dp"
