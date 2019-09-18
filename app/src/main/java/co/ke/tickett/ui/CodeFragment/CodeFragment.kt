@@ -44,6 +44,7 @@ class CodeFragment : Fragment()  , KodeinAware{
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this, factory).get(CodeViewModel::class.java)
+        viewModel.fetchTickets()
         viewModel.employees.observe(this, Observer {
             it?.let {
                 initRecyclerView(it.toEmployeeItem())

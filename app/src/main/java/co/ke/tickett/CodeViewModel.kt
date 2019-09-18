@@ -26,7 +26,11 @@ class CodeViewModel(private val repository: EventsRespository) :
 
     val employees: LiveData<List<Events>>
         get() = _employees
-
+    fun fetchTickets(){
+        Coroutines.io{
+            repository.fetchTickets()
+        }
+    }
 
     fun onSearchTextChange(query: CharSequence) {
         Log.d("SQuery", query.toString())

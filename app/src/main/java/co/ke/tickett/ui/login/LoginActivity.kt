@@ -58,4 +58,6 @@ class LoginActivity : AppCompatActivity(), AuthListener,KodeinAware{
     override fun onFailure(message: String) {
         toast(message)
     }
+
 }
+

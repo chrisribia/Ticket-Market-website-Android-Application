@@ -121,7 +121,7 @@
 
         <Button
                 android:layout_width="wrap_content"
-                android:text="Confirm"
+
                 android:textAllCaps="false"
                 android:onClick="@{event::confirmTicket}"
                 android:id="@+id/btnCon"
