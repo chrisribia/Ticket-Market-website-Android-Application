@@ -80,6 +80,7 @@
             <TextView
                     android:textColor="@android:color/black"
                     android:layout_width="wrap_content"
+                    android:textSize="25dp"
                     android:id="@+id/statez"
                     android:text="@{event.currentTickets.attended}"
                     android:layout_marginBottom="5dp"
@@ -121,7 +122,6 @@
 
         <Button
                 android:layout_width="wrap_content"
-
                 android:textAllCaps="false"
                 android:onClick="@{event::confirmTicket}"
                 android:id="@+id/btnCon"

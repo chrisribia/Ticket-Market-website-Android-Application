@@ -16,6 +16,8 @@ import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.data.db.entity.User
 import co.ke.tickett.databinding.CodeConfirmFragmentBinding
 import co.ke.tickett.ui.login.AuthListener
+import co.ke.tickett.utils.hide
+import co.ke.tickett.utils.hidex
 import co.ke.tickett.utils.toast
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.code_confirm_fragment.*
@@ -55,6 +57,8 @@ class CodeConfirmFragment : Fragment(),KodeinAware,AuthListener {
             var status = it.attended
              if (status == "Confirmed"){
                  binding.btnCon.setText("Already Confirmed")
+                 binding.btnCon.hidex()
+
              }else{
                  binding.btnCon.setText("Please Click here to Confirm")
              }
