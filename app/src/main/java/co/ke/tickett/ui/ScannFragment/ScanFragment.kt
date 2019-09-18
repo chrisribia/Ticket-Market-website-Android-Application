@@ -58,7 +58,8 @@ class ScanFragment : Fragment() , KodeinAware,AuthListener {
 
         if(result != null) {
             if(result.getContents() == null) {
-                context?.toast("Cancelled from fragment")
+                val action = ScanFragmentDirections.actionScanFragmentToHomeFragment()
+                Navigation.findNavController(view!!).navigate(action)
             } else {
                 viewModel.findEmployee(result.getContents())
                 viewModel.qr_code = result.getContents()

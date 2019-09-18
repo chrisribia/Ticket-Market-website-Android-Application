@@ -39,13 +39,19 @@ class ScanViewModel(
         // Navigation.findNavController(view).navigate(action)
     }
 
+    fun fetch(){
+        Coroutines.io{
+            repository.fetchTickets()
+        }
+    }
+
     fun confirmTicket(view: View){
         authListener?.onStarted()
         Coroutines.io {
             repository.confirmTicket(qr_code)
 
         }
-
+        fetch()
     }
 
 

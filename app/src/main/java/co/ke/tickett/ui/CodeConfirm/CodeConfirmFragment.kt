@@ -18,6 +18,7 @@ import co.ke.tickett.databinding.CodeConfirmFragmentBinding
 import co.ke.tickett.ui.login.AuthListener
 import co.ke.tickett.utils.hide
 import co.ke.tickett.utils.hidex
+import co.ke.tickett.utils.showz
 import co.ke.tickett.utils.toast
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.code_confirm_fragment.*
@@ -44,8 +45,11 @@ class CodeConfirmFragment : Fragment(),KodeinAware,AuthListener {
         val binding : CodeConfirmFragmentBinding =DataBindingUtil.inflate(inflater,R.layout.code_confirm_fragment, container, false)
         viewModel = ViewModelProviders.of(this,factory).get(CodeConfirmViewModel::class.java)
         binding.event = viewModel
-        viewModel.fetchTickets()
+
         binding.lifecycleOwner = this
+
+        viewModel.fetchTickets()
+
         arguments?.let {
             val arg = CodeConfirmFragmentArgs.fromBundle(it)
             eventz= arg.event
@@ -66,14 +70,14 @@ class CodeConfirmFragment : Fragment(),KodeinAware,AuthListener {
         }
 
 
+        if (viewModel.boo){
+            binding.btnCon.hidex()
+        }else{
+            binding.btnCon.showz()
+        }
 
         return  binding.root
     }
-
-
-
-
-
 
 
     override fun onStarted() {
