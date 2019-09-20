@@ -39,6 +39,7 @@ class FinalViewModel(private val repository : SellRepository)
 
     var event_name : String? = null
     var event_type : String? = null
+    var event_price : String? = null
     var phone : String? = null
     var email : String? = null
     var code : String = Random().nextInt((8000-10) + 10).toString()

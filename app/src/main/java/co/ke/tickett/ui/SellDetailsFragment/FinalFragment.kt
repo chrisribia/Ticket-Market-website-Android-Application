@@ -46,6 +46,7 @@ class FinalFragment : Fragment(), KodeinAware,AuthListener {
             }
         viewModel.event_name=sell!!.event_name
         viewModel.event_type=sell!!.ticket_type
+        viewModel.event_price=sell!!.ticket_price
         viewModel
         return binding.root
     }

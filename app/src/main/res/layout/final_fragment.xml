@@ -65,6 +65,25 @@
 
                 <TextView
                         android:layout_width="match_parent"
+                        android:text="Ticket Price  :  "
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"/>
+
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:text="@{viewmodel.event_price}"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textFontWeight="20"
+                        android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView
+                        android:layout_width="match_parent"
                         android:text="Phone No :"
                         android:textColor="@android:color/white"
                         android:layout_marginTop="5dp"
@@ -76,6 +95,7 @@
                         android:hint="Enter Phone Number please"
                         android:text="@={viewmodel.phone}"
                         android:textColor="@android:color/black"
+                        android:inputType="phone"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
                         android:textFontWeight="20"
@@ -86,7 +106,7 @@
 
                 <TextView
                         android:layout_width="match_parent"
-                        android:text="Email Adress :"
+                        android:text="Email Address :"
                         android:textColor="@android:color/white"
                         android:layout_marginTop="5dp"
                         android:layout_height="wrap_content"/>
@@ -96,6 +116,7 @@
                         android:layout_width="match_parent"
                         android:hint="Enter Email Address please"
                         android:text="@={viewmodel.email}"
+                        android:inputType="textEmailAddress"
                         android:textColor="@android:color/black"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold"
@@ -103,6 +124,27 @@
                         android:layout_height="wrap_content"/>
             </TableRow>
 
+            <TableRow>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:text="Customer Name :"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"/>
+
+
+                <EditText
+                        android:layout_width="match_parent"
+                        android:hint="Enter Customer Name please"
+                        android:text="@={viewmodel.email}"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:inputType="text"
+                        android:textFontWeight="20"
+                        android:layout_height="wrap_content"/>
+            </TableRow>
 
         </TableLayout>
 

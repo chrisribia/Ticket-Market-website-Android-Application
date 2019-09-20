@@ -37,6 +37,7 @@ class CodeFragment : Fragment()  , KodeinAware{
         val binding : CodeFragmentBinding = DataBindingUtil.inflate(inflater,R.layout.code_fragment, container, false)
         viewModel = ViewModelProviders.of(this,factory).get(CodeViewModel::class.java)
         binding.viewmodel = viewModel
+        viewModel.fetchTickets()
         binding.lifecycleOwner = this
         return binding.root
     }
