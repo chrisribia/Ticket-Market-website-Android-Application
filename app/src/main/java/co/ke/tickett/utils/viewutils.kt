@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 
@@ -25,6 +26,14 @@ fun Button.show(){
 }
 
 fun Button.hide(){
+    visibility = View.GONE
+}
+
+fun TextView.show(){
+    visibility = View.VISIBLE
+}
+
+fun TextView.hide(){
     visibility = View.GONE
 }
 
