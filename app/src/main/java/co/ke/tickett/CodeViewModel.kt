@@ -8,6 +8,7 @@ import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.data.repository.EventsRespository
 import co.ke.tickett.data.repository.SummeryRepository
 import co.ke.tickett.utils.Coroutines
+import java.lang.Exception
 
 class CodeViewModel(private val repository: EventsRespository) :
     ViewModel() {
@@ -20,16 +21,24 @@ class CodeViewModel(private val repository: EventsRespository) :
         Coroutines.io {
             _employees.postValue(
                 repository.getEvents()
+
             )
+
+            fetchTickets()
         }
     }
 
     val employees: LiveData<List<Events>>
         get() = _employees
     fun fetchTickets(){
-        Coroutines.io{
-            repository.fetchTickets()
+        try {
+            Coroutines.io{
+                repository.fetchTickets()
+            }
+        }catch (e : Exception){
+            e.printStackTrace()
         }
+
     }
 
     fun onSearchTextChange(query: CharSequence) {

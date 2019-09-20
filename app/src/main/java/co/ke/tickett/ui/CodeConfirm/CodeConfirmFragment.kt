@@ -13,6 +13,7 @@ import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.data.db.entity.User
 import co.ke.tickett.databinding.CodeConfirmFragmentBinding
 import co.ke.tickett.ui.login.AuthListener
+import co.ke.tickett.utils.hide
 import co.ke.tickett.utils.toast
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
@@ -47,9 +48,15 @@ class CodeConfirmFragment : Fragment(),KodeinAware,AuthListener {
         viewModel.findEmployee(it.ticket_code!!)
             viewModel.ticket_code = it.ticket_code
 
+            viewModel.fetchTickets()
+            if (it.attended == "Confirmed"){
+                binding.btnCon.hide()
+            }else{
+                binding.btnCon.setText("Please click To Confirm")
+            }
+
         }
 
-        viewModel.fetchTickets()
 
         return  binding.root
     }
