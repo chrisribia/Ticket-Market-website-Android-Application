@@ -1,10 +1,7 @@
 package co.ke.tickett.data.db
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import co.ke.tickett.data.db.entity.Events
 
 @Dao
@@ -19,7 +16,6 @@ interface EventsDao {
 
     @Query("SELECT * FROM Events WHERE ticket_code = :ticket_code")
     fun findByCodez(ticket_code: String): LiveData<Events>
-
 
 
     @Query("SELECT * FROM Events")
