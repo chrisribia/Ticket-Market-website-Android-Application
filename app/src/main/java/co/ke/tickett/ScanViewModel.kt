@@ -53,7 +53,7 @@ class ScanViewModel(
         Coroutines.io {
             repository.confirmTicket(qr_code)
         }
-        view.snackbar("confirmed")
+        view.snackbar("confirmed!!")
         view.btnCon.hide()
         fetch()
     }
