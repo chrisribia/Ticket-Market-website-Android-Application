@@ -8,6 +8,9 @@ import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.data.repository.EventsRespository
 import co.ke.tickett.ui.login.AuthListener
 import co.ke.tickett.utils.Coroutines
+import co.ke.tickett.utils.hide
+import co.ke.tickett.utils.snackbar
+import kotlinx.android.synthetic.main.scan_fragment.view.*
 
 class ScanViewModel(
     private val repository : EventsRespository
@@ -35,8 +38,6 @@ class ScanViewModel(
     }
 
     fun toQrScanner(view: View){
-        //val action = ScanFragmentDirections.scannerAction()
-        // Navigation.findNavController(view).navigate(action)
     }
 
     fun fetch(){
@@ -49,8 +50,9 @@ class ScanViewModel(
         authListener?.onStarted()
         Coroutines.io {
             repository.confirmTicket(qr_code)
-
         }
+        view.snackbar("confirmed!!")
+        view.btnCon.hide()
         fetch()
     }
 

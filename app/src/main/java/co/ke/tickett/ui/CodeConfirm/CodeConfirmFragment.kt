@@ -53,7 +53,9 @@ class CodeConfirmFragment : Fragment(),KodeinAware,AuthListener {
                 binding.btnCon.hide()
             }else{
                 binding.btnCon.setText("Please click To Confirm")
+
             }
+
 
         }
 

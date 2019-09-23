@@ -68,25 +68,7 @@
                     android:layout_height="match_parent"
                     />
         </TableRow>
-        <TableRow>
-            <TextView
-                    android:textColor="@android:color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:id="@+id/st"
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold"
-                    android:layout_height="match_parent"
-                    android:text="Ticket Status :" />
-            <TextView
-                    android:textColor="@android:color/black"
-                    android:layout_width="wrap_content"
-                    android:textSize="25dp"
-                    android:id="@+id/sta"
-                    android:text="@{event.currentTickets.attended}"
-                    android:layout_marginBottom="5dp"
-                    android:layout_height="match_parent" />
-        </TableRow>
+
         <TableRow>
             <TextView
                     android:textColor="@android:color/white"
