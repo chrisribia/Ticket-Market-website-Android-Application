@@ -38,8 +38,6 @@ class ScanViewModel(
     }
 
     fun toQrScanner(view: View){
-        //val action = ScanFragmentDirections.scannerAction()
-        // Navigation.findNavController(view).navigate(action)
     }
 
     fun fetch(){
