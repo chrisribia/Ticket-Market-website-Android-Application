@@ -1,17 +1,15 @@
 package co.ke.tickett.ui.CodeFragment
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import co.ke.tickett.CodeViewModel
-
-import co.ke.tickett.R
 import co.ke.tickett.data.db.entity.Events
 import co.ke.tickett.databinding.CodeFragmentBinding
 import com.xwray.groupie.GroupAdapter
@@ -20,7 +18,7 @@ import kotlinx.android.synthetic.main.code_fragment.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
-import java.util.Collections.addAll
+
 
 class CodeFragment : Fragment()  , KodeinAware{
 
@@ -34,7 +32,8 @@ class CodeFragment : Fragment()  , KodeinAware{
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding : CodeFragmentBinding = DataBindingUtil.inflate(inflater,R.layout.code_fragment, container, false)
+        val binding : CodeFragmentBinding = DataBindingUtil.inflate(inflater,
+            co.ke.tickett.R.layout.code_fragment, container, false)
         viewModel = ViewModelProviders.of(this,factory).get(CodeViewModel::class.java)
         binding.viewmodel = viewModel
         viewModel.fetchTickets()
@@ -60,7 +59,12 @@ class CodeFragment : Fragment()  , KodeinAware{
         }
 
         recyclerview.apply {
-            layoutManager = LinearLayoutManager(context)
+
+            layoutManager = LinearLayoutManager(
+                this.getContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
             setHasFixedSize(true)
             adapter = mAdapter
         }

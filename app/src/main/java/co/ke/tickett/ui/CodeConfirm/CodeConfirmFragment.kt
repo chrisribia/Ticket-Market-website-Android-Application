@@ -49,8 +49,8 @@ class CodeConfirmFragment : Fragment(),KodeinAware,AuthListener {
             viewModel.ticket_code = it.ticket_code
 
             viewModel.fetchTickets()
-            if (it.attended == "Confirmed"){
-                binding.btnCon.hide()
+           if (it.attended == "Confirmed"){
+                 binding.btnCon.hide()
             }else{
                 binding.btnCon.setText("Please click To Confirm")
 
@@ -61,6 +61,11 @@ class CodeConfirmFragment : Fragment(),KodeinAware,AuthListener {
 
 
         return  binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel.fetchTickets()
     }
 
 
