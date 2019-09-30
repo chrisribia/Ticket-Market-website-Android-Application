@@ -1,6 +1,5 @@
 package co.ke.tickett.data.network
 
-import co.ke.tickett.data.db.entity.Sell
 import co.ke.tickett.data.network.Response.*
 import okhttp3.OkHttpClient
 import retrofit2.Response
@@ -10,6 +9,7 @@ import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
+
 interface MyApi {
 
     @FormUrlEncoded
